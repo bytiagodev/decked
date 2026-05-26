@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - Login</title>
+    <link rel="icon" type="image/x-icon" href="assets/decked-favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="stripe"></div>
+
+    <div class="login-layout">
+        <div class="brand-side">
+            <div class="brand-content">
+                <img src="assets/decked-logo-hero.png" alt="DECKED" class="logo">
+                <h1>DECKED</h1>
+                <p class="tagline">Ride . Style . Repeat</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="form-side">
+            <div class="form-content">
+                <p class="form-heading">Sign in</p>
+
+                <form action="login.php" method="post">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+
+                <a href="registar.html" class="auth-link">Don't have an account? <span>Sign up</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar"></div>
+</body>
+</html>

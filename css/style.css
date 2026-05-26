@@ -1,0 +1,314 @@
+/* ============================================
+   DECKED - Skate Shop Stylesheet
+   Ride. Style. Repeat.
+   ============================================ */
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+/* ---------- Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Base / Background ---------- */
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background: #F3E4C2;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2C2C28;
+}
+
+/* Layered grain texture */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            rgba(44, 44, 40, 0.06) 0.7px,
+            transparent 0.7px
+        ),
+        radial-gradient(
+            rgba(44, 44, 40, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.03),
+            rgba(44, 44, 40, 0.02)
+        );
+    background-size:
+        8px 8px,
+        45px 45px,
+        100% 100%;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+}
+
+/* Soft vignette */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(44, 44, 40, 0.06) 100%
+        );
+    pointer-events: none;
+}
+
+/* ---------- Colour stripe - left edge ---------- */
+.stripe {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(
+        180deg,
+        #E8614D 0%,
+        #F5A623 40%,
+        #4ECDC4 70%,
+        #87CEEB 100%
+    );
+    z-index: 10;
+}
+
+/* ---------- Colour bar - bottom edge ---------- */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 6px;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        #E8614D 0%,
+        #F5A623 25%,
+        #4ECDC4 50%,
+        #87CEEB 75%,
+        #E8614D 100%
+    );
+    z-index: 10;
+}
+
+/* ---------- Login page ---------- */
+.login-layout {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    z-index: 1;
+}
+
+.brand-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 3rem 4rem 3rem 3rem;
+}
+
+.brand-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-content .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.brand-content h1 {
+    font-family: 'Passion One', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #2C2C28;
+    letter-spacing: 6px;
+    line-height: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.brand-content .tagline {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #8E8E82;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.divider {
+    width: 3px;
+    align-self: center;
+    height: 320px;
+    background: #D4CEBF;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 3rem 3rem 4rem;
+}
+
+.form-content {
+    max-width: 360px;
+}
+
+.form-heading {
+    font-family: 'Passion One', cursive;
+    font-size: 1.75rem;
+    color: #2C2C28;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* ---------- Form elements ---------- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Passion One', cursive;
+    font-size: 1rem;
+    color: #E8614D;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #D4CEBF;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2C2C28;
+    outline: none;
+    transition: border-color 200ms ease;
+}
+
+.form-group input:focus {
+    border-bottom-color: #E8614D;
+}
+
+.form-group input::placeholder {
+    color: #B5B0A3;
+    font-weight: 400;
+}
+
+/* ---------- Buttons ---------- */
+.btn-login {
+    display: block;
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 2rem;
+    background: #E8614D;
+    color: #FEFDF5;
+    border: none;
+    border-radius: 0;
+    font-family: 'Passion One', cursive;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: background 150ms ease, transform 150ms ease, letter-spacing 200ms ease;
+}
+
+.btn-login:hover {
+    background: #2C2C28;
+    letter-spacing: 6px;
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* ---------- Auth link ---------- */
+.auth-link {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #8E8E82;
+    text-decoration: none;
+}
+
+.auth-link span {
+    color: #4ECDC4;
+    font-weight: 700;
+    transition: color 150ms ease;
+}
+
+.auth-link:hover span {
+    color: #E8614D;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .login-layout {
+        flex-direction: column;
+    }
+
+    .brand-side {
+        align-items: center;
+        padding: 3rem 2rem 1.5rem;
+    }
+
+    .brand-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .divider {
+        width: 200px;
+        height: 3px;
+        align-self: center;
+    }
+
+    .form-side {
+        padding: 1.5rem 2rem 3rem;
+        align-items: center;
+    }
+
+    .form-content {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .form-heading {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-content h1 {
+        font-size: 2.75rem;
+    }
+
+    .brand-content .tagline {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+}
