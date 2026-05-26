@@ -219,6 +219,30 @@ body::after {
     font-weight: 400;
 }
 
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #D4CEBF;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2C2C28;
+    outline: none;
+    resize: none;
+    transition: border-color 200ms ease;
+}
+
+.form-group textarea:focus {
+    border-bottom-color: #E8614D;
+}
+
+.form-group textarea::placeholder {
+    color: #B5B0A3;
+    font-weight: 400;
+}
+
 /* ---------- Buttons ---------- */
 .btn-login {
     display: block;
@@ -266,6 +290,116 @@ body::after {
     color: #E8614D;
 }
 
+/* ---------- Feedback messages (portfolio version) ---------- */
+.form-message {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid transparent;
+}
+
+.form-message--error {
+    color: #E8614D;
+    border-left-color: #E8614D;
+}
+
+.form-message--success {
+    color: #4ECDC4;
+    border-left-color: #4ECDC4;
+}
+
+/* ---------- Register page ---------- */
+.register-divider {
+    height: 480px;
+}
+
+.register-layout .form-side {
+    overflow-y: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+/* ---------- Error page ---------- */
+.error-layout {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.error-content {
+    max-width: 640px;
+}
+
+.error-code {
+    font-family: 'Passion One', cursive;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #E8614D;
+    opacity: 0.18;
+    letter-spacing: -8px;
+    margin-bottom: -4rem;
+    user-select: none;
+}
+
+.error-heading {
+    font-family: 'Passion One', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #2C2C28;
+    letter-spacing: 2px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.error-sub {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8E8E82;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.error-redirect {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #B5B0A3;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.error-redirect #countdown {
+    font-family: 'Passion One', cursive;
+    color: #F5A623;
+    font-size: 1rem;
+}
+
+.error-link {
+    display: inline-block;
+    font-family: 'Passion One', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #FEFDF5;
+    background: #E8614D;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    transition: background 150ms ease, letter-spacing 200ms ease;
+}
+
+.error-link:hover {
+    background: #2C2C28;
+    letter-spacing: 6px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
     .login-layout {
@@ -300,6 +434,24 @@ body::after {
     .form-heading {
         text-align: center;
     }
+
+    .register-divider {
+        height: 3px;
+        width: 200px;
+    }
+
+    .register-layout .form-side {
+        overflow-y: visible;
+    }
+
+    .error-heading {
+        font-size: 3rem;
+    }
+
+    .error-code {
+        font-size: 10rem;
+        margin-bottom: -2.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -310,5 +462,14 @@ body::after {
     .brand-content .tagline {
         font-size: 0.75rem;
         letter-spacing: 3px;
+    }
+
+    .error-heading {
+        font-size: 2.25rem;
+    }
+
+    .error-code {
+        font-size: 7rem;
+        margin-bottom: -2rem;
     }
 }
