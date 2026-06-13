@@ -10,7 +10,7 @@
 
 ---
 
-Built around a skate culture brand designed from scratch. Bold visuals, warm tones, and a consistent identity carried through every page, from the logo to the product copy.
+Built around a California-inspired skate and lifestyle brand designed from scratch. Bold visuals, warm tones, and a consistent identity carried through every page, from the brand identity to the product copy.
 
 ## Tech stack
 
@@ -22,7 +22,7 @@ Built around a skate culture brand designed from scratch. Bold visuals, warm ton
 
 ## Product catalogue
 
-Products are organised across decks, trucks, wheels, apparel, hardware, and accessories, each created specifically for the project with custom descriptions, pricing, and stock levels.
+Products are organised across decks, trucks, wheels, apparel, hardware, and accessories. All products, descriptions, pricing, and stock levels were written specifically for the project.
 
 ## Design
 
@@ -55,6 +55,7 @@ Products are organised across decks, trucks, wheels, apparel, hardware, and acce
 - Fully responsive
 
 ---
+
 <p align="center">
   <img src="assets/decked-logo-navbar.png" alt="DECKED" width="40"/>
   <br/>
