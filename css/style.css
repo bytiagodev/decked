@@ -27,6 +27,8 @@ body {
     font-family: 'Archivo', system-ui, sans-serif;
     background: #FEFDF5;
     color: #2C2C28;
+    display: flex;
+    flex-direction: column;
 }
 
 ::selection {
@@ -2469,6 +2471,13 @@ a {
     margin-right: auto;
 }
 
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+
+main {
+    flex: 1 0 auto;
+}
 
 /* ============================================
    REVEAL ANIMATION
@@ -2508,6 +2517,7 @@ a {
 
     .footer-newsletter {
         max-width: 100%;
+        flex: 1 1 auto;
     }
 
     /* Shop category banner less tall */
