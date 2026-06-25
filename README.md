@@ -10,17 +10,9 @@
 
 ---
 
-DECKED is a fictional skate and lifestyle brand built from scratch.
+DECKED is a fictional skate and lifestyle brand.
 
-While many skate shops lean into darker, urban aesthetics, DECKED explores a different direction. Inspired by California surf culture, the project focuses on warm colours, relaxed energy, and a more welcoming visual identity while still staying rooted in skateboarding.
-
-Everything in the store was created specifically for the project, including the branding, product catalogue, product descriptions, photography direction, and overall user experience.
-
-## Approach
-
-The goal was to build something that feels less like a frontend exercise and more like a real brand.
-
-Rather than starting with features, I started with identity. The colour palette, typography, product categories, promotional content, and page layouts were all designed around a consistent California-inspired aesthetic that carries through the entire experience.
+Inspired by California culture, it takes a different approach to the darker, more urban aesthetic often associated with skate shops. The branding, product catalogue, copywriting, and interface were created specifically for the site and built around a consistent visual identity.
 
 ## Design
 
