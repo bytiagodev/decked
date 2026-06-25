@@ -501,6 +501,7 @@ a {
     background: none;
     border: none;
     padding: 0;
+    display: inline-block;
     margin-bottom: clamp(20px, 3vw, 34px);
     transition: color 0.2s ease;
 }
