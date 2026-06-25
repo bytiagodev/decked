@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - Product</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar"><nav class="navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/decked-wheel.png" alt=""><span>DECKED</span></a><div class="navbar-desktop"><a href="shop.html" class="navbar-link">Shop</a><a href="about.html" class="navbar-link">About</a><a href="login.html" class="navbar-link js-guest-only">Log in</a><a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;"><span class="navbar-user-dot"></span><span class="js-user-name">Account</span></a><button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button></div><div class="navbar-mobile"><button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button><button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button></div></nav></header>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;"><a href="shop.html" class="mobile-menu-link">Shop</a><a href="about.html" class="mobile-menu-link">About</a><a href="login.html" class="mobile-menu-link js-guest-only">Log in</a><a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a><button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button><div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div></div>
+
+    <main style="background:#FEFDF5;">
+        <section class="product-detail" id="productDetail"></section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="assets/decked-wheel.png" alt="" class="footer-wheel"><div><div class="footer-brand-name">DECKED</div><div class="footer-brand-location">Venice Beach, CA</div></div></div><div class="footer-newsletter"><div class="footer-newsletter-heading">Get the drop before it sells out.</div><form class="footer-newsletter-form" id="newsletterForm"><input type="email" required placeholder="you@email.com" class="footer-newsletter-input"><button type="submit" class="footer-newsletter-btn">Sign me up</button></form><div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div></div></div><div class="footer-bottom"><span>&copy; 2026 DECKED. Made on the boardwalk.</span><div class="footer-bottom-links"><a href="about.html" class="footer-bottom-link">About</a><span>Ride &middot; Style &middot; Repeat</span></div></div></footer>
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+    <aside class="cart-drawer" id="cartDrawer"><div class="cart-drawer-header"><span class="cart-drawer-title">Your cart</span><button type="button" class="cart-drawer-close js-close-cart">&times;</button></div><div class="cart-drawer-items" id="cartDrawerItems"></div><div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;"><div class="cart-drawer-subtotal"><span class="cart-drawer-subtotal-label">Subtotal</span><span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span></div><p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p><a href="checkout.html" class="cart-drawer-checkout">Checkout</a></div><div class="cart-drawer-empty" id="cartDrawerEmpty"><img src="assets/decked-wheel.png" alt=""><div><div class="cart-drawer-empty-title">Your cart's empty.</div><div class="cart-drawer-empty-sub">Go get decked.</div></div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a></div></aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var params = new URLSearchParams(window.location.search);
+            var productId = params.get('id');
+            var product = productId ? findProduct(productId) : null;
+            var container = document.getElementById('productDetail');
+
+            if (!product) {
+                container.innerHTML = '<a href="shop.html" class="btn-back">Back to shop</a><div style="text-align:center;padding:60px 0;"><div style="font-family:\'Instrument Serif\',serif;font-size:26px;color:#2C2C28;">Product not found.</div><div style="margin:8px 0 20px;font-size:14px;color:#8E8E82;">This product doesn\'t exist or has been removed.</div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Back to shop</a></div>';
+                return;
+            }
+
+            document.title = 'DECKED - ' + product.name;
+            var meta = stockMeta(product);
+            var out = isOutOfStock(product);
+            var st = effectiveStock(product);
+            var specs = specsFor(product);
+            var blurb = blurbFor(product);
+
+            var html = '<a href="shop.html" class="btn-back">Back to shop</a>';
+            html += '<div class="product-detail-layout">';
+
+            /* Image */
+            html += '<div class="product-detail-image">';
+            html += '<img src="' + productImage(product) + '" alt="' + product.name + '">';
+            if (product.tag) {
+                html += '<span class="product-card-tag" style="color:' + tagTextColor(product.tag) + ';background:' + tagColor(product.tag) + ';top:16px;left:16px;font-size:11px;padding:6px 11px;border-radius:6px;">' + product.tag + '</span>';
+            }
+            html += '</div>';
+
+            /* Info */
+            html += '<div class="product-detail-info">';
+            html += '<span class="product-detail-category">' + product.cat + '</span>';
+            html += '<h1 class="product-detail-name">' + product.name + '</h1>';
+            html += '<div class="product-detail-price-row">';
+            html += '<div class="product-detail-price">\u20AC' + product.price + '</div>';
+            html += '<span class="product-detail-stock" style="color:' + meta.color + ';"><span class="stock-dot" style="background:' + meta.color + ';"></span>' + meta.label + '</span>';
+            html += '</div>';
+            html += '<p class="product-detail-blurb">' + blurb + '</p>';
+
+            /* Actions */
+            html += '<div class="product-detail-actions">';
+            if (!out) {
+                html += '<button type="button" class="btn-primary btn-primary--shadow" id="addToCartBtn" style="padding:15px 34px;">Add to cart</button>';
+            } else {
+                html += '<span class="product-detail-soldout">Sold out</span>';
+            }
+            html += '<span class="product-detail-shipping">Free shipping over \u20AC75</span>';
+            html += '</div>';
+
+            /* Stock toggle (demo) */
+            html += '<div class="stock-toggle-row">';
+            html += '<span class="stock-toggle-label">Demo &middot; set stock</span>';
+            html += '<div class="stock-toggle" id="stockToggle"></div>';
+            html += '</div>';
+
+            /* Specs */
+            html += '<div class="product-specs">';
+            html += '<span class="product-specs-title">Specs</span>';
+            html += '<div class="product-specs-list">';
+            specs.forEach(function (s) {
+                html += '<div class="product-spec-row"><span class="product-spec-label">' + s[0] + '</span><span class="product-spec-value">' + s[1] + '</span></div>';
+            });
+            html += '</div></div>';
+            html += '</div>'; /* end info */
+            html += '</div>'; /* end layout */
+
+            /* Related products */
+            var related = PRODUCTS.filter(function (p) { return p.cat === product.cat && p.id !== product.id; }).slice(0, 4);
+            if (related.length > 0) {
+                html += '<div class="related-section">';
+                html += '<h2>Pairs well with</h2>';
+                html += '<div class="related-grid" id="relatedGrid"></div>';
+                html += '</div>';
+            }
+
+            container.innerHTML = html;
+
+            /* Add to cart */
+            var addBtn = document.getElementById('addToCartBtn');
+            if (addBtn) {
+                addBtn.addEventListener('click', function () {
+                    addToCart(product.id);
+                    openCartDrawer();
+                });
+            }
+
+            /* Stock toggle */
+            var toggleEl = document.getElementById('stockToggle');
+            if (toggleEl) {
+                var options = [['in', 'In stock'], ['low', 'Low'], ['out', 'Sold out']];
+                options.forEach(function (o) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'stock-toggle-btn' + (st === o[0] ? ' is-active' : '');
+                    btn.textContent = o[1];
+                    btn.addEventListener('click', function () {
+                        setStockOverride(product.id, o[0]);
+                        window.location.reload();
+                    });
+                    toggleEl.appendChild(btn);
+                });
+            }
+
+            /* Related products */
+            var relatedGrid = document.getElementById('relatedGrid');
+            if (relatedGrid) {
+                related.forEach(function (p) {
+                    relatedGrid.appendChild(buildProductCard(p));
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - Log in</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar"><nav class="navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/decked-wheel.png" alt=""><span>DECKED</span></a><div class="navbar-desktop"><a href="shop.html" class="navbar-link">Shop</a><a href="about.html" class="navbar-link">About</a><a href="login.html" class="navbar-link js-guest-only">Log in</a><a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;"><span class="navbar-user-dot"></span><span class="js-user-name">Account</span></a><button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button></div><div class="navbar-mobile"><button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button><button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button></div></nav></header>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;"><a href="shop.html" class="mobile-menu-link">Shop</a><a href="about.html" class="mobile-menu-link">About</a><a href="login.html" class="mobile-menu-link js-guest-only">Log in</a><a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a><button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button><div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div></div>
+
+    <main class="auth-page">
+        <div class="auth-wrapper">
+            <div class="auth-card">
+                <!-- Photo side -->
+                <div class="auth-photo">
+                    <img src="images/lifestyle/lifestyle-apparel-banner.jpg" alt="">
+                    <div class="auth-photo-overlay"></div>
+                    <div class="auth-photo-content">
+                        <img src="assets/decked-wheel.png" alt="">
+                        <div class="auth-photo-heading">Members ride first.</div>
+                        <div class="auth-photo-sub">Save your cart, track your orders, and get every drop before it sells out.</div>
+                    </div>
+                </div>
+
+                <!-- Form side -->
+                <div class="auth-form-side">
+                    <!-- Tabs -->
+                    <div class="auth-tabs">
+                        <button type="button" class="auth-tab is-active" id="tabLogin">Log in</button>
+                        <button type="button" class="auth-tab" id="tabRegister">Create account</button>
+                    </div>
+
+                    <h1 class="auth-title" id="authTitle">Welcome back.</h1>
+                    <p class="auth-sub" id="authSub">Log in to pick up where you left off.</p>
+
+                    <form class="auth-form" id="authForm">
+                        <label class="auth-field" id="nameField" style="display:none;">
+                            <span class="auth-field-label">Name</span>
+                            <input type="text" name="name" autocomplete="name" placeholder="Jordan Vega">
+                        </label>
+                        <label class="auth-field">
+                            <span class="auth-field-label">Email</span>
+                            <input type="email" name="email" autocomplete="email" placeholder="you@email.com" required>
+                        </label>
+                        <label class="auth-field">
+                            <span class="auth-field-label">Password</span>
+                            <input type="password" name="password" autocomplete="current-password" placeholder="&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;" required>
+                        </label>
+                        <div class="auth-error" id="authError" style="display:none;"></div>
+                        <button type="submit" class="auth-submit" id="authSubmit">Log in</button>
+                    </form>
+                    <p class="auth-disclaimer">Demo only. No real account is created and nothing is sent.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="assets/decked-wheel.png" alt="" class="footer-wheel"><div><div class="footer-brand-name">DECKED</div><div class="footer-brand-location">Venice Beach, CA</div></div></div><div class="footer-newsletter"><div class="footer-newsletter-heading">Get the drop before it sells out.</div><form class="footer-newsletter-form" id="newsletterForm"><input type="email" required placeholder="you@email.com" class="footer-newsletter-input"><button type="submit" class="footer-newsletter-btn">Sign me up</button></form><div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div></div></div><div class="footer-bottom"><span>&copy; 2026 DECKED. Made on the boardwalk.</span><div class="footer-bottom-links"><a href="about.html" class="footer-bottom-link">About</a><span>Ride &middot; Style &middot; Repeat</span></div></div></footer>
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+    <aside class="cart-drawer" id="cartDrawer"><div class="cart-drawer-header"><span class="cart-drawer-title">Your cart</span><button type="button" class="cart-drawer-close js-close-cart">&times;</button></div><div class="cart-drawer-items" id="cartDrawerItems"></div><div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;"><div class="cart-drawer-subtotal"><span class="cart-drawer-subtotal-label">Subtotal</span><span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span></div><p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p><a href="checkout.html" class="cart-drawer-checkout">Checkout</a></div><div class="cart-drawer-empty" id="cartDrawerEmpty"><img src="assets/decked-wheel.png" alt=""><div><div class="cart-drawer-empty-title">Your cart's empty.</div><div class="cart-drawer-empty-sub">Go get decked.</div></div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a></div></aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            /* If already logged in, redirect */
+            if (isLoggedIn()) {
+                window.location.href = 'account.html';
+                return;
+            }
+
+            var mode = 'login';
+            var tabLogin    = document.getElementById('tabLogin');
+            var tabRegister = document.getElementById('tabRegister');
+            var nameField   = document.getElementById('nameField');
+            var titleEl     = document.getElementById('authTitle');
+            var subEl       = document.getElementById('authSub');
+            var submitEl    = document.getElementById('authSubmit');
+            var errorEl     = document.getElementById('authError');
+            var form        = document.getElementById('authForm');
+
+            var nextParam = new URLSearchParams(window.location.search).get('next');
+
+            function setMode(m) {
+                mode = m;
+                errorEl.style.display = 'none';
+                if (m === 'login') {
+                    tabLogin.classList.add('is-active');
+                    tabRegister.classList.remove('is-active');
+                    nameField.style.display = 'none';
+                    titleEl.textContent = 'Welcome back.';
+                    subEl.textContent = 'Log in to pick up where you left off.';
+                    submitEl.textContent = 'Log in';
+                } else {
+                    tabRegister.classList.add('is-active');
+                    tabLogin.classList.remove('is-active');
+                    nameField.style.display = 'flex';
+                    titleEl.textContent = 'Join the club.';
+                    subEl.textContent = 'One quick step and you are in.';
+                    submitEl.textContent = 'Create account';
+                }
+            }
+
+            tabLogin.addEventListener('click', function () { setMode('login'); });
+            tabRegister.addEventListener('click', function () { setMode('register'); });
+
+            /* Check if ?mode=register */
+            if (new URLSearchParams(window.location.search).get('mode') === 'register') {
+                setMode('register');
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var email = form.elements.email.value.trim();
+                var pass  = form.elements.password.value.trim();
+                var name  = form.elements.name ? form.elements.name.value.trim() : '';
+
+                if (mode === 'register') {
+                    if (!name || !email || !pass) {
+                        errorEl.textContent = 'Please fill in every field.';
+                        errorEl.style.display = 'block';
+                        return;
+                    }
+                    saveUser({ name: name, email: email });
+                } else {
+                    if (!email || !pass) {
+                        errorEl.textContent = 'Enter your email and password.';
+                        errorEl.style.display = 'block';
+                        return;
+                    }
+                    /* Derive name from email for demo */
+                    var derivedName = email.split('@')[0].replace(/[._-]+/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+                    saveUser({ name: derivedName || 'Skater', email: email });
+                }
+
+                window.location.href = nextParam ? decodeURIComponent(nextParam) : 'account.html';
+            });
+        });
+    </script>
+</body>
+</html>

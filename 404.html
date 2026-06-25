@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - Page not found</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar"><nav class="navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/decked-wheel.png" alt=""><span>DECKED</span></a><div class="navbar-desktop"><a href="shop.html" class="navbar-link">Shop</a><a href="about.html" class="navbar-link">About</a><a href="login.html" class="navbar-link js-guest-only">Log in</a><a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;"><span class="navbar-user-dot"></span><span class="js-user-name">Account</span></a><button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button></div><div class="navbar-mobile"><button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button><button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button></div></nav></header>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;"><a href="shop.html" class="mobile-menu-link">Shop</a><a href="about.html" class="mobile-menu-link">About</a><a href="login.html" class="mobile-menu-link js-guest-only">Log in</a><a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a><button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button><div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div></div>
+
+    <main style="background:#FEFDF5;">
+        <div class="error-page">
+            <div>
+                <div class="error-page-code">404</div>
+                <h1 class="error-page-heading">Board not found.</h1>
+                <p class="error-page-sub">This page rolled off the edge. Let's get you back on the boardwalk.</p>
+                <a href="index.html" class="btn-primary btn-primary--shadow" style="font-size:14px;padding:13px 28px;">Back to home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="assets/decked-wheel.png" alt="" class="footer-wheel"><div><div class="footer-brand-name">DECKED</div><div class="footer-brand-location">Venice Beach, CA</div></div></div><div class="footer-newsletter"><div class="footer-newsletter-heading">Get the drop before it sells out.</div><form class="footer-newsletter-form" id="newsletterForm"><input type="email" required placeholder="you@email.com" class="footer-newsletter-input"><button type="submit" class="footer-newsletter-btn">Sign me up</button></form><div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div></div></div><div class="footer-bottom"><span>&copy; 2026 DECKED. Made on the boardwalk.</span><div class="footer-bottom-links"><a href="about.html" class="footer-bottom-link">About</a><span>Ride &middot; Style &middot; Repeat</span></div></div></footer>
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+    <aside class="cart-drawer" id="cartDrawer"><div class="cart-drawer-header"><span class="cart-drawer-title">Your cart</span><button type="button" class="cart-drawer-close js-close-cart">&times;</button></div><div class="cart-drawer-items" id="cartDrawerItems"></div><div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;"><div class="cart-drawer-subtotal"><span class="cart-drawer-subtotal-label">Subtotal</span><span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span></div><p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p><a href="checkout.html" class="cart-drawer-checkout">Checkout</a></div><div class="cart-drawer-empty" id="cartDrawerEmpty"><img src="assets/decked-wheel.png" alt=""><div><div class="cart-drawer-empty-title">Your cart's empty.</div><div class="cart-drawer-empty-sub">Go get decked.</div></div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a></div></aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

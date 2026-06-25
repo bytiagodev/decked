@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - Checkout</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar"><nav class="navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/decked-wheel.png" alt=""><span>DECKED</span></a><div class="navbar-desktop"><a href="shop.html" class="navbar-link">Shop</a><a href="about.html" class="navbar-link">About</a><a href="login.html" class="navbar-link js-guest-only">Log in</a><a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;"><span class="navbar-user-dot"></span><span class="js-user-name">Account</span></a><button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button></div><div class="navbar-mobile"><button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button><button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button></div></nav></header>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;"><a href="shop.html" class="mobile-menu-link">Shop</a><a href="about.html" class="mobile-menu-link">About</a><a href="login.html" class="mobile-menu-link js-guest-only">Log in</a><a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a><button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button><div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div></div>
+
+    <main style="background:#FEFDF5;">
+        <section class="checkout-page" id="checkoutPage"></section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="assets/decked-wheel.png" alt="" class="footer-wheel"><div><div class="footer-brand-name">DECKED</div><div class="footer-brand-location">Venice Beach, CA</div></div></div><div class="footer-newsletter"><div class="footer-newsletter-heading">Get the drop before it sells out.</div><form class="footer-newsletter-form" id="newsletterForm"><input type="email" required placeholder="you@email.com" class="footer-newsletter-input"><button type="submit" class="footer-newsletter-btn">Sign me up</button></form><div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div></div></div><div class="footer-bottom"><span>&copy; 2026 DECKED. Made on the boardwalk.</span><div class="footer-bottom-links"><a href="about.html" class="footer-bottom-link">About</a><span>Ride &middot; Style &middot; Repeat</span></div></div></footer>
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+    <aside class="cart-drawer" id="cartDrawer"><div class="cart-drawer-header"><span class="cart-drawer-title">Your cart</span><button type="button" class="cart-drawer-close js-close-cart">&times;</button></div><div class="cart-drawer-items" id="cartDrawerItems"></div><div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;"><div class="cart-drawer-subtotal"><span class="cart-drawer-subtotal-label">Subtotal</span><span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span></div><p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p><a href="checkout.html" class="cart-drawer-checkout">Checkout</a></div><div class="cart-drawer-empty" id="cartDrawerEmpty"><img src="assets/decked-wheel.png" alt=""><div><div class="cart-drawer-empty-title">Your cart's empty.</div><div class="cart-drawer-empty-sub">Go get decked.</div></div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a></div></aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var container = document.getElementById('checkoutPage');
+
+            /* Require login */
+            if (!isLoggedIn()) {
+                window.location.href = 'login.html?next=' + encodeURIComponent('checkout.html');
+                return;
+            }
+
+            var cart = getCart();
+
+            /* Empty cart state */
+            if (cart.length === 0) {
+                container.innerHTML =
+                    '<div class="checkout-empty">' +
+                        '<img src="assets/decked-wheel.png" alt="">' +
+                        '<div class="checkout-empty-title">Nothing to check out.</div>' +
+                        '<div class="checkout-empty-sub">Add a few things to your cart first.</div>' +
+                        '<a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Start shopping</a>' +
+                    '</div>';
+                return;
+            }
+
+            /* Build checkout form */
+            var subtotal = cartSubtotal();
+            var shipping = subtotal >= 75 ? 0 : 5;
+            var total = subtotal + shipping;
+
+            var html = '';
+            html += '<a href="shop.html" class="btn-back">Back to shop</a>';
+            html += '<h1 class="checkout-title">Checkout</h1>';
+            html += '<div class="checkout-layout">';
+
+            /* Payment form */
+            html += '<form class="checkout-form" id="checkoutForm">';
+            html += '<div class="checkout-form-title">Payment details</div>';
+            html += '<label class="auth-field"><span class="auth-field-label">Cardholder name</span><input name="cardname" type="text" required placeholder="Jordan Vega"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">Card number</span><input name="cardnum" type="text" inputmode="numeric" required placeholder="4242 4242 4242 4242"></label>';
+            html += '<div class="checkout-field-row">';
+            html += '<label class="auth-field"><span class="auth-field-label">Expiry</span><input name="exp" type="text" required placeholder="08 / 28"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">CVC</span><input name="cvc" type="text" inputmode="numeric" required placeholder="123"></label>';
+            html += '</div>';
+            html += '<button type="submit" class="checkout-pay">Pay \u20AC' + total + '</button>';
+            html += '<div class="checkout-demo-note">Demo checkout. No card is charged. Use any details.</div>';
+            html += '</form>';
+
+            /* Order summary */
+            html += '<div class="checkout-summary">';
+            html += '<div class="checkout-summary-title">Order summary</div>';
+            html += '<div>';
+            cart.forEach(function (ci) {
+                var p = findProduct(ci.id);
+                if (!p) return;
+                html += '<div class="checkout-summary-item">';
+                html += '<img src="' + productImage(p) + '" alt="">';
+                html += '<div class="checkout-summary-item-info"><div class="checkout-summary-item-name">' + p.name + '</div><div class="checkout-summary-item-qty">Qty ' + ci.qty + '</div></div>';
+                html += '<div class="checkout-summary-item-price">\u20AC' + (p.price * ci.qty) + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            html += '<div class="checkout-totals">';
+            html += '<div class="checkout-totals-row"><span>Subtotal</span><span>\u20AC' + subtotal + '</span></div>';
+            html += '<div class="checkout-totals-row"><span>Shipping</span><span>' + (shipping === 0 ? 'Free' : '\u20AC' + shipping) + '</span></div>';
+            html += '<div class="checkout-totals-final"><span>Total</span><span>\u20AC' + total + '</span></div>';
+            html += '</div>';
+            html += '</div>';
+
+            html += '</div>'; /* end layout */
+            container.innerHTML = html;
+
+            /* Handle form submit */
+            document.getElementById('checkoutForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                var order = placeOrder();
+                if (!order) return;
+
+                var user = getUser();
+                var emailDisplay = user ? user.email : 'your inbox';
+
+                container.innerHTML =
+                    '<div class="order-confirmed">' +
+                        '<div class="order-confirmed-icon">\u2713</div>' +
+                        '<h1>Order placed.</h1>' +
+                        '<p>Order ' + order.number + ' is confirmed for \u20AC' + order.total + '. We sent a receipt to ' + emailDisplay + '. See you on the boardwalk.</p>' +
+                        '<div class="order-confirmed-actions">' +
+                            '<a href="account.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">View orders</a>' +
+                            '<a href="shop.html" class="btn-outline" style="padding:13px 26px;">Keep shopping</a>' +
+                        '</div>' +
+                    '</div>';
+
+                updateCartCount();
+            });
+        });
+    </script>
+</body>
+</html>

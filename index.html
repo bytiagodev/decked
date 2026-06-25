@@ -3,45 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DECKED - Login</title>
-    <link rel="icon" type="image/x-icon" href="assets/decked-favicon.ico">
+    <title>DECKED - Venice Beach Skate Shop</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="stripe"></div>
 
-    <div class="login-layout">
-        <div class="brand-side">
-            <div class="brand-content">
-                <img src="assets/decked-logo-hero.png" alt="DECKED" class="logo">
-                <h1>DECKED</h1>
-                <p class="tagline">Ride . Style . Repeat</p>
+    <!-- Navbar -->
+    <header class="navbar">
+        <nav class="navbar-inner">
+            <a href="index.html" class="navbar-logo" aria-label="DECKED home">
+                <img src="assets/decked-wheel.png" alt="">
+                <span>DECKED</span>
+            </a>
+            <div class="navbar-desktop">
+                <a href="shop.html" class="navbar-link">Shop</a>
+                <a href="about.html" class="navbar-link">About</a>
+                <a href="login.html" class="navbar-link js-guest-only">Log in</a>
+                <a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;">
+                    <span class="navbar-user-dot"></span>
+                    <span class="js-user-name">Account</span>
+                </a>
+                <button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button>
             </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="form-side">
-            <div class="form-content">
-                <p class="form-heading">Sign in</p>
-
-                <form action="login.php" method="post">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
-                    </div>
-                    <button type="submit" class="btn-login">Login</button>
-                </form>
-
-                <a href="registar.html" class="auth-link">Don't have an account? <span>Sign up</span></a>
+            <div class="navbar-mobile">
+                <button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button>
+                <button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button>
             </div>
-        </div>
+        </nav>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" style="display:none;">
+        <a href="shop.html" class="mobile-menu-link">Shop</a>
+        <a href="about.html" class="mobile-menu-link">About</a>
+        <a href="login.html" class="mobile-menu-link js-guest-only">Log in</a>
+        <a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a>
+        <button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button>
+        <div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div>
     </div>
 
-    <div class="bottom-bar"></div>
+    <main>
+        <!-- Marquee -->
+        <div class="marquee">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span>Ride &middot; Style &middot; Repeat</span>
+                    <img src="assets/decked-wheel.png" alt="" class="marquee-wheel">
+                    <span>Venice Beach, CA</span>
+                    <span class="marquee-accent-teal">Summer Drop '26</span>
+                    <img src="assets/decked-wheel.png" alt="" class="marquee-wheel">
+                    <span>Free shipping over &euro;75</span>
+                    <span class="marquee-accent-gold">Built on cracked curbs</span>
+                </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <span>Ride &middot; Style &middot; Repeat</span>
+                    <img src="assets/decked-wheel.png" alt="" class="marquee-wheel">
+                    <span>Venice Beach, CA</span>
+                    <span class="marquee-accent-teal">Summer Drop '26</span>
+                    <img src="assets/decked-wheel.png" alt="" class="marquee-wheel">
+                    <span>Free shipping over &euro;75</span>
+                    <span class="marquee-accent-gold">Built on cracked curbs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <section class="hero">
+            <img src="images/lifestyle/lifestyle-homepage-hero.jpg" alt="Two skaters watching the sunset over Venice Beach" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-inner" data-reveal>
+                    <div class="hero-location">
+                        <span class="mono-label">Venice Beach, California</span>
+                    </div>
+                    <h1>Made for golden hours<br>and endless summers.</h1>
+                    <p class="hero-sub">Decks, wheels and threads that earn their scars on the boardwalk. Ride hard, look good, and do it all again tomorrow.</p>
+                    <div class="hero-actions">
+                        <a href="shop.html" class="btn-hero-primary">Shop the Summer Drop</a>
+                        <a href="about.html" class="btn-hero-ghost">Our story</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand intro -->
+        <section class="brand-intro">
+            <div class="brand-intro-inner" data-reveal>
+                <span class="section-label section-label--muted">// The brand</span>
+                <p>DECKED is a Venice Beach skate label for people who treat the city like a playground and the sunset like a deadline. We make the gear we actually want to ride. <span class="accent-coral">And nothing we'd be embarrassed to bomb a hill on.</span></p>
+            </div>
+        </section>
+
+        <!-- Summer drop -->
+        <section class="summer-drop">
+            <div class="section-wrap">
+                <div class="summer-drop-header" data-reveal>
+                    <div>
+                        <span class="section-label section-label--red">// New this season</span>
+                        <h2>The Summer Drop</h2>
+                    </div>
+                    <a href="shop.html" class="btn-mono-underline">Shop everything</a>
+                </div>
+                <div class="drop-grid">
+                    <a href="shop.html?cat=Decks" class="drop-card" data-reveal>
+                        <img src="images/lifestyle/lifestyle-decks-banner.jpg" alt="Decks that take a beating" loading="lazy">
+                        <span class="drop-card-overlay"></span>
+                        <span class="drop-card-index">01</span>
+                        <span class="drop-card-text">
+                            <span class="drop-card-title">Decks that take a beating</span>
+                            <span class="drop-card-sub">Eight new shapes, pressed for pop.</span>
+                            <span class="drop-card-cta">Shop decks</span>
+                        </span>
+                    </a>
+                    <a href="shop.html?cat=Apparel" class="drop-card" data-reveal>
+                        <img src="images/lifestyle/lifestyle-apparel-banner.jpg" alt="Wear the boardwalk" loading="lazy">
+                        <span class="drop-card-overlay"></span>
+                        <span class="drop-card-index">02</span>
+                        <span class="drop-card-text">
+                            <span class="drop-card-title">Wear the boardwalk</span>
+                            <span class="drop-card-sub">Tees, caps and heavyweight hoodies.</span>
+                            <span class="drop-card-cta">Shop apparel</span>
+                        </span>
+                    </a>
+                    <a href="shop.html?cat=Wheels" class="drop-card" data-reveal>
+                        <img src="images/lifestyle/lifestyle-wheels-trucks-banner.jpg" alt="Roll heavy" loading="lazy">
+                        <span class="drop-card-overlay"></span>
+                        <span class="drop-card-index">03</span>
+                        <span class="drop-card-text">
+                            <span class="drop-card-title">Roll heavy</span>
+                            <span class="drop-card-sub">Wheels and trucks tuned for the street.</span>
+                            <span class="drop-card-cta">Shop wheels</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manifesto -->
+        <section class="manifesto">
+            <img src="assets/decked-wheel.png" alt="" aria-hidden="true" class="manifesto-wheel">
+            <div class="manifesto-inner" data-reveal>
+                <span class="section-label section-label--teal">// Manifesto</span>
+                <p class="manifesto-text">We started DECKED on a beat-up stretch of the Venice boardwalk with one rule: build the gear we'd actually ride. No boards that snap by August. No logos we'd peel off. Just decks, wheels and threads made for long golden afternoons and the slow roll home.</p>
+                <p class="manifesto-tagline">Ride. Style. Repeat.</p>
+                <div class="manifesto-byline">DECKED &middot; est. on the boardwalk</div>
+            </div>
+        </section>
+
+        <!-- Featured products -->
+        <section class="featured">
+            <div class="featured-header" data-reveal>
+                <div>
+                    <span class="section-label section-label--red">// Featured</span>
+                    <h2>Fresh off the truck</h2>
+                </div>
+                <span class="featured-hint">Drag to explore</span>
+            </div>
+            <div class="featured-scroll" id="featuredScroll"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="assets/decked-wheel.png" alt="" class="footer-wheel">
+                <div>
+                    <div class="footer-brand-name">DECKED</div>
+                    <div class="footer-brand-location">Venice Beach, CA</div>
+                </div>
+            </div>
+            <div class="footer-newsletter">
+                <div class="footer-newsletter-heading">Get the drop before it sells out.</div>
+                <form class="footer-newsletter-form" id="newsletterForm">
+                    <input type="email" required placeholder="you@email.com" class="footer-newsletter-input">
+                    <button type="submit" class="footer-newsletter-btn">Sign me up</button>
+                </form>
+                <div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 DECKED. Made on the boardwalk.</span>
+            <div class="footer-bottom-links">
+                <a href="about.html" class="footer-bottom-link">About</a>
+                <span>Ride &middot; Style &middot; Repeat</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart backdrop -->
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+
+    <!-- Cart drawer -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">Your cart</span>
+            <button type="button" class="cart-drawer-close js-close-cart" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-drawer-items" id="cartDrawerItems"></div>
+        <div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;">
+            <div class="cart-drawer-subtotal">
+                <span class="cart-drawer-subtotal-label">Subtotal</span>
+                <span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span>
+            </div>
+            <p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p>
+            <a href="checkout.html" class="cart-drawer-checkout">Checkout</a>
+        </div>
+        <div class="cart-drawer-empty" id="cartDrawerEmpty">
+            <img src="assets/decked-wheel.png" alt="">
+            <div>
+                <div class="cart-drawer-empty-title">Your cart's empty.</div>
+                <div class="cart-drawer-empty-sub">Go get decked.</div>
+            </div>
+            <a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a>
+        </div>
+    </aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        /* Render featured products */
+        document.addEventListener('DOMContentLoaded', function () {
+            var scroll = document.getElementById('featuredScroll');
+            FEATURED_IDS.forEach(function (id) {
+                var product = findProduct(id);
+                if (!product) return;
+                var wrapper = document.createElement('div');
+                wrapper.className = 'featured-scroll-item';
+                wrapper.appendChild(buildProductCard(product));
+                scroll.appendChild(wrapper);
+            });
+        });
+    </script>
 </body>
 </html>

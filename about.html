@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECKED - About</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/decked-favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/decked-favicon-180.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar"><nav class="navbar-inner"><a href="index.html" class="navbar-logo"><img src="assets/decked-wheel.png" alt=""><span>DECKED</span></a><div class="navbar-desktop"><a href="shop.html" class="navbar-link">Shop</a><a href="about.html" class="navbar-link">About</a><a href="login.html" class="navbar-link js-guest-only">Log in</a><a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;"><span class="navbar-user-dot"></span><span class="js-user-name">Account</span></a><button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button></div><div class="navbar-mobile"><button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button><button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button></div></nav></header>
+    <div class="mobile-menu" id="mobileMenu" style="display:none;"><a href="shop.html" class="mobile-menu-link">Shop</a><a href="about.html" class="mobile-menu-link">About</a><a href="login.html" class="mobile-menu-link js-guest-only">Log in</a><a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a><button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button><div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div></div>
+
+    <main>
+        <!-- About hero -->
+        <section class="about-hero">
+            <img src="images/lifestyle/lifestyle-about-hero.jpg" alt="A skater carving down the boardwalk at sunset">
+            <div class="about-hero-overlay"></div>
+            <div class="about-hero-content">
+                <span class="section-label section-label--sand">// Our story</span>
+                <h1>We grew up<br>on the boardwalk.</h1>
+            </div>
+        </section>
+
+        <!-- About body -->
+        <section class="about-body">
+            <div class="about-text" data-reveal>
+                <p>DECKED started where Venice always starts things, on cracked concrete somewhere between the skatepark and the sand. We were tired of boards that looked great in a photo and snapped a month later, and gear priced like it was made of gold instead of maple.</p>
+                <p>So we built our own. Decks pressed to take a beating, wheels tuned for rough city pavement, and clothes soft enough to live in. Everything tested the only way that counts: ridden hard, every single day, by people who actually skate.</p>
+            </div>
+
+            <!-- Pillars -->
+            <div class="about-pillars" data-reveal>
+                <div class="about-pillar about-pillar-border--teal">
+                    <span class="about-pillar-num">01</span>
+                    <h3>Built to ride</h3>
+                    <p>Pressed, tested and ridden before it ever ships. If it can't survive a Venice summer, it doesn't get our name.</p>
+                </div>
+                <div class="about-pillar about-pillar-border--gold">
+                    <span class="about-pillar-num">02</span>
+                    <h3>Made for Venice</h3>
+                    <p>Every colorway and every shape pulled straight from golden-hour light and salt-bleached pavement.</p>
+                </div>
+                <div class="about-pillar about-pillar-border--coral">
+                    <span class="about-pillar-num">03</span>
+                    <h3>Priced for skaters</h3>
+                    <p>Good gear shouldn't cost a paycheck. Fair prices, no hype tax, restocked all summer long.</p>
+                </div>
+            </div>
+
+            <!-- Photo grid -->
+            <div class="about-photos" data-reveal>
+                <div class="about-photo"><img src="images/lifestyle/lifestyle-decks-banner.jpg" alt="" loading="lazy"></div>
+                <div class="about-photo"><img src="images/lifestyle/lifestyle-wheels-trucks-banner.jpg" alt="" loading="lazy"></div>
+                <div class="about-photo"><img src="images/lifestyle/lifestyle-accessories-banner.jpg" alt="" loading="lazy"></div>
+            </div>
+
+            <!-- CTA -->
+            <div class="about-cta" data-reveal>
+                <a href="shop.html" class="btn-primary btn-primary--shadow" style="padding:15px 32px;">Shop the full range</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><img src="assets/decked-wheel.png" alt="" class="footer-wheel"><div><div class="footer-brand-name">DECKED</div><div class="footer-brand-location">Venice Beach, CA</div></div></div><div class="footer-newsletter"><div class="footer-newsletter-heading">Get the drop before it sells out.</div><form class="footer-newsletter-form" id="newsletterForm"><input type="email" required placeholder="you@email.com" class="footer-newsletter-input"><button type="submit" class="footer-newsletter-btn">Sign me up</button></form><div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You're on the list. See you on the boardwalk.</div></div></div><div class="footer-bottom"><span>&copy; 2026 DECKED. Made on the boardwalk.</span><div class="footer-bottom-links"><a href="about.html" class="footer-bottom-link">About</a><span>Ride &middot; Style &middot; Repeat</span></div></div></footer>
+    <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
+    <aside class="cart-drawer" id="cartDrawer"><div class="cart-drawer-header"><span class="cart-drawer-title">Your cart</span><button type="button" class="cart-drawer-close js-close-cart">&times;</button></div><div class="cart-drawer-items" id="cartDrawerItems"></div><div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;"><div class="cart-drawer-subtotal"><span class="cart-drawer-subtotal-label">Subtotal</span><span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span></div><p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p><a href="checkout.html" class="cart-drawer-checkout">Checkout</a></div><div class="cart-drawer-empty" id="cartDrawerEmpty"><img src="assets/decked-wheel.png" alt=""><div><div class="cart-drawer-empty-title">Your cart's empty.</div><div class="cart-drawer-empty-sub">Go get decked.</div></div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a></div></aside>
+
+    <script src="js/products.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
