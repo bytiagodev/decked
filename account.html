@@ -34,8 +34,8 @@
                 container.innerHTML =
                     '<div class="logged-out-state">' +
                         '<img src="assets/decked-wheel.png" alt="">' +
-                        '<div class="logged-out-title">You\'re logged out.</div>' +
-                        '<div class="logged-out-sub">Log in to see your orders and saved cart.</div>' +
+                        '<div class="logged-out-title">You’re not signed in.</div>' +
+                        '<div class="logged-out-sub">Orders and cart stay for next time.</div>' +
                         '<a href="login.html?next=account.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Log in</a>' +
                     '</div>';
                 return;
@@ -48,7 +48,7 @@
             html += '<span class="section-label section-label--muted">// Account</span>';
             html += '<div class="account-header">';
             html += '<div>';
-            html += '<h1 class="account-name">Hey, ' + firstName + '.</h1>';
+            html += '<h1 class="account-name">Back on the board, ' + firstName + '.</h1>';
             html += '<div class="account-email">' + user.email + '</div>';
             html += '</div>';
             html += '<button type="button" class="btn-outline js-logout">Log out</button>';
@@ -63,7 +63,7 @@
                     html += '<div class="order-card">';
                     html += '<div style="min-width:160px;">';
                     html += '<div class="order-card-meta">' + o.number + ' &middot; ' + o.date + '</div>';
-                    html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Paid &middot; ' + itemCount + ' items</div>';
+                    html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Confirmed &middot; ' + itemCount + ' items</div>';
                     html += '</div>';
                     html += '<div class="order-card-thumbs">';
                     o.items.slice(0, 4).forEach(function (it) {
