@@ -778,14 +778,6 @@ a {
     color: #2C2C28;
 }
 
-.featured-hint {
-    font-family: 'Spline Sans Mono', monospace;
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #8E8E82;
-}
-
 .featured-scroll {
     display: flex;
     gap: clamp(14px, 1.6vw, 22px);
