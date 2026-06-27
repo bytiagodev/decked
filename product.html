@@ -32,7 +32,7 @@
             var container = document.getElementById('productDetail');
 
             if (!product) {
-                container.innerHTML = '<a href="shop.html" class="btn-back">Back to shop</a><div style="text-align:center;padding:60px 0;"><div style="font-family:\'Instrument Serif\',serif;font-size:26px;color:#2C2C28;">Product not found.</div><div style="margin:8px 0 20px;font-size:14px;color:#8E8E82;">This product doesn\'t exist or has been removed.</div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Back to shop</a></div>';
+                container.innerHTML = '<a href="shop.html" class="btn-back">Back to the shop</a><div style="text-align:center;padding:60px 0;"><div style="font-family:\'Instrument Serif\',serif;font-size:26px;color:#2C2C28;">This one rolled away.</div><div style="margin:8px 0 20px;font-size:14px;color:#8E8E82;">We couldn\'t find that product.</div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Back to the shop</a></div>';
                 return;
             }
 
@@ -43,7 +43,7 @@
             var specs = specsFor(product);
             var blurb = blurbFor(product);
 
-            var html = '<a href="shop.html" class="btn-back">Back to shop</a>';
+            var html = '<a href="shop.html" class="btn-back">Back to the shop</a>';
             html += '<div class="product-detail-layout">';
 
             /* Image */
@@ -76,7 +76,7 @@
 
             /* Stock toggle (demo) */
             html += '<div class="stock-toggle-row">';
-            html += '<span class="stock-toggle-label">Demo &middot; set stock</span>';
+            html += '<span class="stock-toggle-label">Demo &middot; Set stock</span>';
             html += '<div class="stock-toggle" id="stockToggle"></div>';
             html += '</div>';
 
