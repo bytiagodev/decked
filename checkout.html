@@ -41,8 +41,8 @@
                 container.innerHTML =
                     '<div class="checkout-empty">' +
                         '<img src="assets/decked-wheel.png" alt="">' +
-                        '<div class="checkout-empty-title">Nothing to check out.</div>' +
-                        '<div class="checkout-empty-sub">Add a few things to your cart first.</div>' +
+                        '<div class="checkout-empty-title">Nothing in your cart yet.</div>' +
+                        '<div class="checkout-empty-sub">Add a few things before heading out.</div>' +
                         '<a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Start shopping</a>' +
                     '</div>';
                 return;
@@ -54,7 +54,7 @@
             var total = subtotal + shipping;
 
             var html = '';
-            html += '<a href="shop.html" class="btn-back">Back to shop</a>';
+            html += '<a href="shop.html" class="btn-back">Back to the shop</a>';
             html += '<h1 class="checkout-title">Checkout</h1>';
             html += '<div class="checkout-layout">';
 
@@ -68,7 +68,7 @@
             html += '<label class="auth-field"><span class="auth-field-label">CVC</span><input name="cvc" type="text" inputmode="numeric" required placeholder="123"></label>';
             html += '</div>';
             html += '<button type="submit" class="checkout-pay">Pay \u20AC' + total + '</button>';
-            html += '<div class="checkout-demo-note">Demo checkout. No card is charged. Use any details.</div>';
+            html += '<div class="checkout-demo-note">Demo checkout. No payment is processed.</div>';
             html += '</form>';
 
             /* Order summary */
@@ -108,7 +108,7 @@
                     '<div class="order-confirmed">' +
                         '<div class="order-confirmed-icon">\u2713</div>' +
                         '<h1>Order placed.</h1>' +
-                        '<p>Order ' + order.number + ' is confirmed for \u20AC' + order.total + '. We sent a receipt to ' + emailDisplay + '. See you on the boardwalk.</p>' +
+                        '<p>Order ' + order.number + ' is all set for \u20AC' + order.total + '. We sent a receipt to ' + emailDisplay + '. See you on the boardwalk.</p>' +
                         '<div class="order-confirmed-actions">' +
                             '<a href="account.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">View orders</a>' +
                             '<a href="shop.html" class="btn-outline" style="padding:13px 26px;">Keep shopping</a>' +
