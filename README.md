@@ -2,53 +2,25 @@
   <img src="assets/decked-banner.webp" alt="DECKED - California Inspired Skate Shop" width="100%"/>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/status-complete-4ECDC4?style=flat-square&labelColor=2C2C28" alt="Status"/>
-  <img src="https://img.shields.io/badge/theme-California%20Inspired-F5A623?style=flat-square&labelColor=2C2C28" alt="California Inspired"/>
-  <img src="https://img.shields.io/badge/built%20with-Vanilla%20JavaScript-E8614D?style=flat-square&labelColor=2C2C28" alt="Vanilla JavaScript"/>
-</p>
-
 ---
 
-DECKED is a fictional skate and lifestyle brand.
-
-Inspired by California culture, it takes a different approach to the darker, more urban aesthetic often associated with skate shops. The branding, product catalogue, copywriting, and interface were created specifically for the site and built around a consistent visual identity.
+DECKED is a fictional skate and lifestyle brand. I built it to practice creating complex e-commerce flows without actually writing any backend code. The goal was to see how much of a real store I could simulate using only static files and browser tools.
 
 ## Design
 
-### Typography
+Instead of the dark, gritty look a lot of skate brands use, I went with a lighter California-inspired palette. The background is a cream white, with coral red for pricing and seafoam for primary buttons. For typography, I paired Archivo for headings, Instrument Serif for accents, and Spline Sans Mono for metadata and stock indicators.
 
-* Archivo
-* Instrument Serif
-* Spline Sans Mono
+## How it works
 
-### Colour palette
+The site is built with plain HTML, CSS, and vanilla JavaScript. Since it is hosted as static files on GitHub Pages, there is no server or database. To make the cart, checkout, and user accounts work, I relied entirely on `localStorage`. 
 
-| Colour        | Hex       | Role                            |
-| ------------- | --------- | ------------------------------- |
-| Cream White   | `#FEFDF5` | Page background                 |
-| Sandy Gold    | `#F7E8C8` | Secondary surfaces              |
-| Coral Red     | `#E8614D` | Accents and pricing             |
-| Seafoam       | `#4ECDC4` | Primary actions                 |
-| Sunset Orange | `#F5A623` | Highlights and stock indicators |
-| Concrete      | `#8E8E82` | Muted content                   |
-| Dark Coal     | `#2C2C28` | Primary text and navigation     |
+Every product in the catalogue has an ID, and the cart just saves an array of those IDs and quantities. When you register or log in, it just saves a name locally. When you check out, it generates a fake order number, calculates shipping, and saves the receipt to the browser so it persists across page reloads. 
 
-## Project highlights
+It is obviously not secure enough for a real store since anyone can open the developer tools and edit their cart, but it was a great way to practice sharing state across a multi-page vanilla JavaScript site.
 
-* 42 custom products across six categories
-* Product catalogue, cart, checkout, and account flows
-* Responsive layouts for desktop, tablet, and mobile
-* User authentication and order history using localStorage
-* Original brand identity and custom-written product content
+## Live site
 
-## Tech stack
-
-| Layer    | Implementation          |
-| -------- | ----------------------- |
-| Frontend | HTML + CSS + JavaScript |
-| Data     | localStorage            |
-| Hosting  | GitHub Pages            |
+You can browse the shop and test the checkout flow on the [live demo](https://bytiagodev.github.io/decked/).
 
 ---
 
