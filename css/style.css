@@ -534,19 +534,6 @@ a {
 .section-label--teal { color: #4ECDC4; }
 .section-label--muted { color: #8E8E82; }
 .section-label--sand { color: #F7E8C8; }
-.section-label--light { color: rgba(254, 253, 245, 0.55); }
-
-.section-heading {
-    font-family: 'Instrument Serif', Georgia, serif;
-    font-weight: 400;
-    color: #2C2C28;
-    line-height: 1;
-}
-
-.section-heading--light {
-    color: #FEFDF5;
-}
-
 
 /* ============================================
    BRAND INTRO
@@ -1103,7 +1090,6 @@ a {
     border-color: #2C2C28;
 }
 
-/* Product grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(218px, 100%), 1fr));
@@ -1548,7 +1534,6 @@ a {
     max-width: 34ch;
 }
 
-/* Auth form side */
 .auth-form-side {
     flex: 1 1 330px;
     min-width: 290px;
@@ -2501,7 +2486,6 @@ main {
         display: flex;
     }
 
-    /* Footer stacks earlier on tablets */
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -2512,12 +2496,10 @@ main {
         flex: 1 1 auto;
     }
 
-    /* Shop category banner less tall */
     .shop-category-banner {
         aspect-ratio: 16/5;
     }
 
-    /* About photos 2 columns on tablet */
     .about-photos {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -2534,12 +2516,10 @@ main {
 }
 
 @media (max-width: 600px) {
-    /* Summer drop: single column */
     .drop-grid {
         grid-template-columns: 1fr;
     }
 
-    /* About: single column pillars and photos */
     .about-pillars {
         grid-template-columns: 1fr;
     }
@@ -2548,7 +2528,6 @@ main {
         grid-template-columns: 1fr;
     }
 
-    /* Checkout: stack summary above form */
     .checkout-layout {
         flex-direction: column;
     }
@@ -2561,7 +2540,6 @@ main {
         order: 2;
     }
 
-    /* Auth: shorter photo, full-width form */
     .auth-photo {
         min-height: 220px;
     }
@@ -2570,7 +2548,6 @@ main {
         min-width: unset;
     }
 
-    /* Product detail: stack image above info */
     .product-detail-layout {
         flex-direction: column;
     }
@@ -2585,12 +2562,10 @@ main {
         width: 100%;
     }
 
-    /* Related products: 2 columns on phone */
     .related-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Footer: center on phone */
     .footer-inner {
         align-items: center;
         text-align: center;
@@ -2605,7 +2580,6 @@ main {
         text-align: center;
     }
 
-    /* Order cards: stack vertically */
     .order-card {
         flex-direction: column;
         align-items: flex-start;
@@ -2616,12 +2590,10 @@ main {
         align-self: flex-end;
     }
 
-    /* Shop category banner */
     .shop-category-banner {
         aspect-ratio: 16/7;
     }
 
-    /* Hero buttons: full width */
     .hero-actions {
         flex-direction: column;
         align-items: stretch;
@@ -2632,17 +2604,14 @@ main {
         text-align: center;
     }
 
-    /* Mobile menu links slightly smaller */
     .mobile-menu-link {
         font-size: 32px;
     }
 
-    /* 404 page tighter spacing */
     .error-page {
         padding: clamp(40px, 8vw, 80px) clamp(16px, 4vw, 42px);
     }
 
-    /* Manifesto wheel smaller and more hidden */
     .manifesto-wheel {
         right: -120px;
         opacity: 0.04;
