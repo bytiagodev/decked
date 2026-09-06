@@ -642,7 +642,7 @@ var BLURBS = {
     "A black canvas backpack with dedicated straps for carrying a board hands-free, built for a full day away from home.",
 };
 
-/* ---------- Updated helpers ---------- */
+/* ---------- Specs and blurbs ---------- */
 
 function specsFor(product) {
   return (
