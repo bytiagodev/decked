@@ -34,7 +34,6 @@ function initNavbarAuth() {
         }
     }
 
-    /* Logout buttons */
     var logoutBtns = document.querySelectorAll('.js-logout');
     for (var i = 0; i < logoutBtns.length; i++) {
         logoutBtns[i].addEventListener('click', function (e) {
@@ -53,7 +52,6 @@ function initCartDrawer() {
     var backdrop = document.getElementById('cartBackdrop');
     if (!drawer) return;
 
-    /* Open buttons */
     var openBtns = document.querySelectorAll('.js-open-cart');
     for (var i = 0; i < openBtns.length; i++) {
         openBtns[i].addEventListener('click', function (e) {
@@ -62,7 +60,6 @@ function initCartDrawer() {
         });
     }
 
-    /* Close */
     var closeBtns = document.querySelectorAll('.js-close-cart');
     for (var i = 0; i < closeBtns.length; i++) {
         closeBtns[i].addEventListener('click', function () {
@@ -87,7 +84,6 @@ function openCartDrawer() {
     document.body.style.overflow = 'hidden';
     renderCartDrawer();
 
-    /* Close mobile menu if open */
     var menu = document.getElementById('mobileMenu');
     if (menu) menu.style.display = 'none';
 }
@@ -145,7 +141,6 @@ function renderCartDrawer() {
     });
     listEl.innerHTML = html;
 
-    /* Subtotal */
     var subtotal = cartSubtotal();
     var subtotalEl = document.getElementById('cartSubtotalValue');
     if (subtotalEl) subtotalEl.textContent = '\u20AC' + subtotal;
@@ -184,7 +179,6 @@ function initMobileMenu() {
         document.body.style.overflow = isOpen ? '' : 'hidden';
     });
 
-    /* Close menu on link click */
     var links = menu.querySelectorAll('a, button');
     for (var i = 0; i < links.length; i++) {
         links[i].addEventListener('click', function () {
@@ -215,7 +209,6 @@ function initReveals() {
     window.addEventListener('scroll', check, { passive: true });
     window.addEventListener('resize', check, { passive: true });
 
-    /* Initial check */
     requestAnimationFrame(check);
 
     /* Failsafe: reveal everything after 2.5s */
@@ -255,7 +248,6 @@ function buildProductCard(product) {
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
 
-    /* Click to view product */
     card.addEventListener('click', function () {
         window.location.href = 'product.html?id=' + product.id;
     });
@@ -263,24 +255,20 @@ function buildProductCard(product) {
     var html = '<div class="product-card-img">';
     html += '<img src="' + img + '" alt="' + product.name + '" loading="lazy">';
 
-    /* Sold out overlay */
     if (out) {
         html += '<span class="product-card-soldout-overlay"><span class="product-card-soldout-label">Sold out</span></span>';
     }
 
-    /* Tag badge */
     if (product.tag) {
         html += '<span class="product-card-tag" style="color:' + tagTextColor(product.tag) + ';background:' + tagColor(product.tag) + ';">' + product.tag + '</span>';
     }
 
-    /* Add button */
     if (!out) {
         html += '<button type="button" class="product-card-add" data-add-id="' + product.id + '">+ Add</button>';
     }
 
     html += '</div>';
 
-    /* Info */
     html += '<div class="product-card-info">';
     html += '<span class="product-card-category">' + product.cat + '</span>';
     html += '<div class="product-card-row">';
