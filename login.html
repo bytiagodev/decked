@@ -16,7 +16,6 @@
     <main class="auth-page">
         <div class="auth-wrapper">
             <div class="auth-card">
-                <!-- Photo side -->
                 <div class="auth-photo">
                     <img src="images/lifestyle/lifestyle-apparel-banner.jpg" alt="">
                     <div class="auth-photo-overlay"></div>
@@ -26,9 +25,7 @@
                     </div>
                 </div>
 
-                <!-- Form side -->
                 <div class="auth-form-side">
-                    <!-- Tabs -->
                     <div class="auth-tabs">
                         <button type="button" class="auth-tab is-active" id="tabLogin">Log in</button>
                         <button type="button" class="auth-tab" id="tabRegister">Create account</button>
@@ -68,7 +65,6 @@
     <script src="js/app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            /* If already logged in, redirect */
             if (isLoggedIn()) {
                 window.location.href = 'account.html';
                 return;
@@ -109,7 +105,6 @@
             tabLogin.addEventListener('click', function () { setMode('login'); });
             tabRegister.addEventListener('click', function () { setMode('register'); });
 
-            /* Check if ?mode=register */
             if (new URLSearchParams(window.location.search).get('mode') === 'register') {
                 setMode('register');
             }

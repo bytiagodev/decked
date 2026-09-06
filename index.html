@@ -10,7 +10,6 @@
 </head>
 <body>
 
-    <!-- Navbar -->
     <header class="navbar">
         <nav class="navbar-inner">
             <a href="index.html" class="navbar-logo" aria-label="DECKED home">
@@ -34,7 +33,6 @@
         </nav>
     </header>
 
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu" style="display:none;">
         <a href="shop.html" class="mobile-menu-link">Shop</a>
         <a href="about.html" class="mobile-menu-link">About</a>
@@ -45,7 +43,6 @@
     </div>
 
     <main>
-        <!-- Marquee -->
         <div class="marquee">
             <div class="marquee-track">
                 <div class="marquee-content">
@@ -69,7 +66,6 @@
             </div>
         </div>
 
-        <!-- Hero -->
         <section class="hero">
             <img src="images/lifestyle/lifestyle-homepage-hero.jpg" alt="Two skaters watching the sunset over Venice Beach" class="hero-img">
             <div class="hero-overlay"></div>
@@ -88,7 +84,6 @@
             </div>
         </section>
 
-        <!-- Brand intro -->
         <section class="brand-intro">
             <div class="brand-intro-inner" data-reveal>
                 <span class="section-label section-label--muted">// The brand</span>
@@ -96,7 +91,6 @@
             </div>
         </section>
 
-        <!-- Summer drop -->
         <section class="summer-drop">
             <div class="section-wrap">
                 <div class="summer-drop-header" data-reveal>
@@ -141,7 +135,6 @@
             </div>
         </section>
 
-        <!-- Manifesto -->
         <section class="manifesto">
             <img src="assets/decked-wheel.png" alt="" aria-hidden="true" class="manifesto-wheel">
             <div class="manifesto-inner" data-reveal>
@@ -152,7 +145,6 @@
             </div>
         </section>
 
-        <!-- Featured products -->
         <section class="featured">
             <div class="featured-header" data-reveal>
                 <div>
@@ -164,7 +156,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-brand">
@@ -192,10 +183,8 @@
         </div>
     </footer>
 
-    <!-- Cart backdrop -->
     <div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>
 
-    <!-- Cart drawer -->
     <aside class="cart-drawer" id="cartDrawer">
         <div class="cart-drawer-header">
             <span class="cart-drawer-title">Your cart</span>
@@ -224,7 +213,6 @@
     <script src="js/store.js"></script>
     <script src="js/app.js"></script>
     <script>
-        /* Render featured products */
         document.addEventListener('DOMContentLoaded', function () {
             var scroll = document.getElementById('featuredScroll');
             FEATURED_IDS.forEach(function (id) {

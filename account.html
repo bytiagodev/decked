@@ -30,7 +30,6 @@
             var user = getUser();
 
             if (!user) {
-                /* Logged out state */
                 container.innerHTML =
                     '<div class="logged-out-state">' +
                         '<img src="assets/decked-wheel.png" alt="">' +
@@ -84,7 +83,6 @@
 
             container.innerHTML = html;
 
-            /* Bind logout */
             var logoutBtn = container.querySelector('.js-logout');
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', function () {

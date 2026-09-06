@@ -46,7 +46,6 @@
             var html = '<a href="shop.html" class="btn-back">Back to the shop</a>';
             html += '<div class="product-detail-layout">';
 
-            /* Image */
             html += '<div class="product-detail-image">';
             html += '<img src="' + productImage(product) + '" alt="' + product.name + '">';
             if (product.tag) {
@@ -54,7 +53,6 @@
             }
             html += '</div>';
 
-            /* Info */
             html += '<div class="product-detail-info">';
             html += '<span class="product-detail-category">' + product.cat + '</span>';
             html += '<h1 class="product-detail-name">' + product.name + '</h1>';
@@ -64,7 +62,6 @@
             html += '</div>';
             html += '<p class="product-detail-blurb">' + blurb + '</p>';
 
-            /* Actions */
             html += '<div class="product-detail-actions">';
             if (!out) {
                 html += '<button type="button" class="btn-primary btn-primary--shadow" id="addToCartBtn" style="padding:15px 34px;">Add to cart</button>';
@@ -74,13 +71,11 @@
             html += '<span class="product-detail-shipping">Free shipping over \u20AC75</span>';
             html += '</div>';
 
-            /* Stock toggle (demo) */
             html += '<div class="stock-toggle-row">';
             html += '<span class="stock-toggle-label">Demo &middot; Set stock</span>';
             html += '<div class="stock-toggle" id="stockToggle"></div>';
             html += '</div>';
 
-            /* Specs */
             html += '<div class="product-specs">';
             html += '<span class="product-specs-title">Specs</span>';
             html += '<div class="product-specs-list">';
@@ -91,7 +86,6 @@
             html += '</div>'; /* end info */
             html += '</div>'; /* end layout */
 
-            /* Related products */
             var related = PRODUCTS.filter(function (p) { return p.cat === product.cat && p.id !== product.id; }).slice(0, 4);
             if (related.length > 0) {
                 html += '<div class="related-section">';
@@ -102,7 +96,6 @@
 
             container.innerHTML = html;
 
-            /* Add to cart */
             var addBtn = document.getElementById('addToCartBtn');
             if (addBtn) {
                 addBtn.addEventListener('click', function () {
@@ -111,7 +104,6 @@
                 });
             }
 
-            /* Stock toggle */
             var toggleEl = document.getElementById('stockToggle');
             if (toggleEl) {
                 var options = [['in', 'In stock'], ['low', 'Low'], ['out', 'Sold out']];
@@ -128,7 +120,6 @@
                 });
             }
 
-            /* Related products */
             var relatedGrid = document.getElementById('relatedGrid');
             if (relatedGrid) {
                 related.forEach(function (p) {

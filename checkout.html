@@ -28,7 +28,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             var container = document.getElementById('checkoutPage');
 
-            /* Require login */
             if (!isLoggedIn()) {
                 window.location.href = 'login.html?next=' + encodeURIComponent('checkout.html');
                 return;
@@ -36,7 +35,6 @@
 
             var cart = getCart();
 
-            /* Empty cart state */
             if (cart.length === 0) {
                 container.innerHTML =
                     '<div class="checkout-empty">' +
@@ -48,7 +46,6 @@
                 return;
             }
 
-            /* Build checkout form */
             var subtotal = cartSubtotal();
             var shipping = subtotal >= 75 ? 0 : 5;
             var total = subtotal + shipping;
@@ -58,7 +55,6 @@
             html += '<h1 class="checkout-title">Checkout</h1>';
             html += '<div class="checkout-layout">';
 
-            /* Payment form */
             html += '<form class="checkout-form" id="checkoutForm">';
             html += '<div class="checkout-form-title">Payment details</div>';
             html += '<label class="auth-field"><span class="auth-field-label">Cardholder name</span><input name="cardname" type="text" required placeholder="Jordan Vega"></label>';
@@ -71,7 +67,6 @@
             html += '<div class="checkout-demo-note">Demo checkout. No payment is processed.</div>';
             html += '</form>';
 
-            /* Order summary */
             html += '<div class="checkout-summary">';
             html += '<div class="checkout-summary-title">Order summary</div>';
             html += '<div>';
@@ -95,7 +90,6 @@
             html += '</div>'; /* end layout */
             container.innerHTML = html;
 
-            /* Handle form submit */
             document.getElementById('checkoutForm').addEventListener('submit', function (e) {
                 e.preventDefault();
                 var order = placeOrder();
