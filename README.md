@@ -2,6 +2,10 @@
   <img src="assets/decked-banner.webp" alt="DECKED - California Inspired Skate Shop" width="100%"/>
 </p>
 
+<p align="center">
+  <a href="https://bytiago.com/">🌐 <strong>bytiago.com</strong> &nbsp;•&nbsp; View my full portfolio</a>
+</p>
+
 ---
 
 DECKED is a fictional skate and lifestyle brand. I built it to practice creating complex e-commerce flows without actually writing any backend code. The goal was to see how much of a real store I could simulate using only static files and browser tools.
@@ -21,6 +25,11 @@ It is obviously not secure enough for a real store since anyone can open the dev
 ## Live site
 
 You can browse the shop and test the checkout flow on the [live demo](https://bytiagodev.github.io/decked/).
+
+---
+
+### More of my work
+If you enjoyed this project, check out my full portfolio and other experiments at [bytiago.com](https://bytiago.com/).
 
 ---
 
