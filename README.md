@@ -3,38 +3,43 @@
 </p>
 
 <p align="center">
-  <a href="https://bytiago.com/">🌐 <strong>bytiago.com</strong> &nbsp;•&nbsp; View my full portfolio</a>
+  <strong>RIDE. STYLE. REPEAT.</strong><br>
+  <sub>Venice Beach, California. Fictional brand, real storefront.</sub>
+</p>
+
+<p align="center">
+  <a href="https://bytiagodev.github.io/decked/"><strong>Browse the shop</strong></a>
 </p>
 
 ---
 
-DECKED is a fictional skate and lifestyle brand. I built it to practice creating complex e-commerce flows without actually writing any backend code. The goal was to see how much of a real store I could simulate using only static files and browser tools.
+DECKED is a fictional skate and lifestyle brand. I built it to practice complex e-commerce flows without writing any backend, to see how much of a real store I could simulate with static files and browser tools alone. You can browse 42 products, filter by category, fill a cart, register, check out, and come back later to find your order history still sitting there.
 
-## Design
+## THE SPEC SHEET
 
-Instead of the dark, gritty look a lot of skate brands use, I went with a lighter California-inspired palette. The background is a cream white, with coral red for pricing and seafoam for primary buttons. For typography, I paired Archivo for headings, Instrument Serif for accents, and Spline Sans Mono for metadata and stock indicators.
+| | |
+| --- | --- |
+| Catalogue | 42 products across 6 categories |
+| Pages | 8, plain HTML, no router |
+| Server | none |
+| Database | none |
+| Cart, accounts, orders, stock | `localStorage` |
+| Build step | none. Push and it is live |
 
-## How it works
+## THE LOOK
 
-The site is built with plain HTML, CSS, and vanilla JavaScript. Since it is hosted as static files on GitHub Pages, there is no server or database. To make the cart, checkout, and user accounts work, I relied entirely on `localStorage`. 
+Most skate brands go dark and gritty. This one goes to the boardwalk at golden hour: cream white ground, coral red on pricing, seafoam on every primary button, sunset orange on the low-stock dots. Archivo carries the UI, Instrument Serif carries the headings, and Spline Sans Mono handles prices, category tags and stock labels, so the numbers always read as data.
 
-Every product in the catalogue has an ID, and the cart just saves an array of those IDs and quantities. When you register or log in, it just saves a name locally. When you check out, it generates a fake order number, calculates shipping, and saves the receipt to the browser so it persists across page reloads. 
+## THE FAKE BACKEND
 
-It is obviously not secure enough for a real store since anyone can open the developer tools and edit their cart, but it was a great way to practice sharing state across a multi-page vanilla JavaScript site.
+Every product has an ID, and the cart is just an array of those IDs with quantities. Registering saves a name and email locally. Checkout generates an order number, works out shipping, writes the receipt to the browser and keeps it across reloads. Stock levels can be flipped on a product page to see how the grid reacts.
 
-## Live site
-
-You can browse the shop and test the checkout flow on the [live demo](https://bytiagodev.github.io/decked/).
-
----
-
-### More of my work
-If you enjoyed this project, check out my full portfolio and other experiments at [bytiago.com](https://bytiago.com/).
+None of it is secure. Anyone can open devtools and give themselves a free deck. That is the honest trade of the exercise: what it actually taught me was how to keep state consistent across eight separate vanilla JavaScript pages that share nothing but a storage key.
 
 ---
 
 <p align="center">
   <img src="assets/decked-wheel.png" alt="DECKED" width="40"/>
   <br/>
-  <sub>DECKED &copy; 2026</sub>
+  <sub>DECKED &copy; 2026 · Built by <a href="https://bytiago.com/">Tiago Teixeira</a></sub>
 </p>
