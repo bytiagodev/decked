@@ -57,14 +57,14 @@
 
             html += '<form class="checkout-form" id="checkoutForm">';
             html += '<div class="checkout-form-title">Payment details</div>';
-            html += '<label class="auth-field"><span class="auth-field-label">Cardholder name</span><input name="cardname" type="text" required placeholder="Jordan Vega"></label>';
-            html += '<label class="auth-field"><span class="auth-field-label">Card number</span><input name="cardnum" type="text" inputmode="numeric" required placeholder="4242 4242 4242 4242"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">Cardholder name</span><input name="cardname" type="text" value="Jordan Vega" readonly autocomplete="off"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">Card number</span><input name="cardnum" type="text" value="4242 4242 4242 4242" readonly autocomplete="off"></label>';
             html += '<div class="checkout-field-row">';
-            html += '<label class="auth-field"><span class="auth-field-label">Expiry</span><input name="exp" type="text" required placeholder="08 / 28"></label>';
-            html += '<label class="auth-field"><span class="auth-field-label">CVC</span><input name="cvc" type="text" inputmode="numeric" required placeholder="123"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">Expiry</span><input name="exp" type="text" value="08 / 28" readonly autocomplete="off"></label>';
+            html += '<label class="auth-field"><span class="auth-field-label">CVC</span><input name="cvc" type="text" value="123" readonly autocomplete="off"></label>';
             html += '</div>';
             html += '<button type="submit" class="checkout-pay">Pay \u20AC' + total + '</button>';
-            html += '<div class="checkout-demo-note">Demo checkout. No payment is processed.</div>';
+            html += '<div class="checkout-demo-note">Demo checkout. The card details are sample values and no payment is processed.</div>';
             html += '</form>';
 
             html += '<div class="checkout-summary">';

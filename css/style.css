@@ -1618,6 +1618,12 @@ a {
     border-color: #4ECDC4;
 }
 
+.auth-field input[readonly] {
+    background: #F3F1E6;
+    color: #5C5C55;
+    cursor: default;
+}
+
 .auth-error {
     font-size: 13px;
     color: #E8614D;
