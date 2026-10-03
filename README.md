@@ -41,5 +41,5 @@ None of it is secure. Anyone can open devtools and give themselves a free deck. 
 <p align="center">
   <img src="assets/decked-wheel.png" alt="DECKED" width="40"/>
   <br/>
-  <sub>DECKED &copy; 2026 · Built by <a href="https://bytiago.com/">Tiago Teixeira</a></sub>
+  <sub>DECKED &copy; 2026 · Built by <a href="https://bytiago.com/en/">Tiago Teixeira</a></sub>
 </p>
