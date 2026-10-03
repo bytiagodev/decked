@@ -1847,6 +1847,11 @@ a {
 
 .checkout-field-row .auth-field {
     flex: 1;
+    min-width: 0;
+}
+
+.checkout-field-row input {
+    width: 100%;
 }
 
 .checkout-pay {
