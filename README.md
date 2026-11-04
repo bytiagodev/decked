@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/decked-banner.webp" alt="DECKED - California Inspired Skate Shop" width="100%"/>
+  <img src="assets/decked-banner.webp" alt="DECKED, a California skate shop" width="100%"/>
 </p>
 
 <p align="center">
@@ -13,28 +13,19 @@
 
 ---
 
-DECKED is a fictional skate and lifestyle brand. I built it to practice complex e-commerce flows without writing any backend, to see how much of a real store I could simulate with static files and browser tools alone. You can browse 42 products, filter by category, fill a cart, register, check out, and come back later to find your order history still sitting there.
+Anyone can open devtools and give themselves a free deck. That is the deal with DECKED: a skate shop with a working storefront and no backend at all, built to see how much of a real store static files and a browser can fake.
 
-## THE SPEC SHEET
+You can browse 42 products in six categories, fill a cart, register, check out and come back later to find your order history still there. It is eight plain HTML pages with no router and no build step, so a push to main is the whole deploy.
 
-| | |
-| --- | --- |
-| Catalogue | 42 products across 6 categories |
-| Pages | 8, plain HTML, no router |
-| Server | none |
-| Database | none |
-| Cart, accounts, orders, stock | `localStorage` |
-| Build step | none. Push and it is live |
+## Where the store lives
 
-## THE LOOK
+All of it is in `localStorage`. Every product has an ID, and the cart is an array of those IDs with quantities. Registering saves a name and email. Checkout generates an order number, works out shipping, writes the receipt and keeps it across reloads. Stock levels can be flipped from a product page to watch the grid react.
 
-Most skate brands go dark and gritty. This one goes to the boardwalk at golden hour: cream white ground, coral red on pricing, seafoam on every primary button, sunset orange on the low-stock dots. Archivo carries the UI, Instrument Serif carries the headings, and Spline Sans Mono handles prices, category tags and stock labels, so the numbers always read as data.
+None of it is secure, and it was never meant to be. What it taught me was keeping state consistent across eight separate vanilla JavaScript pages that share nothing but a storage key.
 
-## THE FAKE BACKEND
+## Golden hour, not grit
 
-Every product has an ID, and the cart is just an array of those IDs with quantities. Registering saves a name and email locally. Checkout generates an order number, works out shipping, writes the receipt to the browser and keeps it across reloads. Stock levels can be flipped on a product page to see how the grid reacts.
-
-None of it is secure. Anyone can open devtools and give themselves a free deck. That is the honest trade of the exercise: what it actually taught me was how to keep state consistent across eight separate vanilla JavaScript pages that share nothing but a storage key.
+Most skate brands go dark and gritty. This one goes to the boardwalk at golden hour: cream ground, coral on the prices, seafoam on every primary button, sunset orange on the low-stock dots. Prices, category tags and stock labels are set in a monospace face, so the numbers always read as data.
 
 ---
 
