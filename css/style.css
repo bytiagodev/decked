@@ -257,7 +257,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 }
 
 .mobile-menu-link--muted {
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .mobile-menu-footer {
@@ -266,7 +266,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 
@@ -506,7 +506,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     font-size: 12.5px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
     background: none;
     border: none;
     padding: 0;
@@ -537,9 +537,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     text-transform: uppercase;
 }
 
-.section-label--red { color: #E8614D; }
+.section-label--red { color: #C53019; }
 .section-label--teal { color: #4ECDC4; }
-.section-label--muted { color: #8E8E82; }
+.section-label--muted { color: #69695F; }
 .section-label--sand { color: #F7E8C8; }
 
 /* ============================================
@@ -919,7 +919,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .product-card-row {
@@ -943,7 +943,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .product-card-price {
     font-size: 15px;
     font-weight: 700;
-    color: #E8614D;
+    color: #C53019;
     white-space: nowrap;
 }
 
@@ -981,7 +981,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 12px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .shop-title-row {
@@ -1004,7 +1004,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .shop-count {
     font-family: 'Spline Sans Mono', monospace;
     font-size: 13px;
-    color: #8E8E82;
+    color: #69695F;
     padding-bottom: 8px;
 }
 
@@ -1126,7 +1126,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 
 .product-missing { text-align: center; padding: 60px 0; }
 .product-missing-title { font-family: 'Instrument Serif', serif; font-size: 26px; color: #2C2C28; }
-.product-missing-sub { margin: 8px 0 20px; font-size: 14px; color: #8E8E82; }
+.product-missing-sub { margin: 8px 0 20px; font-size: 14px; color: #69695F; }
 
 .product-detail-layout {
     display: flex;
@@ -1169,7 +1169,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 12px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .product-detail-name {
@@ -1192,7 +1192,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .product-detail-price {
     font-size: clamp(1.5rem, 2.2vw, 1.9rem);
     font-weight: 700;
-    color: #E8614D;
+    color: #C53019;
 }
 
 .product-detail-stock {
@@ -1206,7 +1206,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 
 .product-detail-stock--in { color: #2f9e94; }
 .product-detail-stock--low { color: #b07e0a; }
-.product-detail-stock--out { color: #E8614D; }
+.product-detail-stock--out { color: #C53019; }
 
 .stock-dot {
     width: 7px;
@@ -1236,7 +1236,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .product-detail-soldout {
     font-size: 15px;
     font-weight: 700;
-    color: #8E8E82;
+    color: #69695F;
     background: rgba(142, 142, 130, 0.16);
     border: 1px solid rgba(142, 142, 130, 0.3);
     padding: 15px 34px;
@@ -1248,7 +1248,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 12px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 /* Stock toggle (demo) */
@@ -1308,7 +1308,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .product-specs-list {
@@ -1328,7 +1328,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .product-spec-label {
     font-family: 'Spline Sans Mono', monospace;
     font-size: 13px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .product-spec-value {
@@ -1443,7 +1443,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-family: 'Spline Sans Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.14em;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .about-pillar h3 {
@@ -1604,7 +1604,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 
 .auth-sub {
     font-size: 14.5px;
-    color: #8E8E82;
+    color: #69695F;
     margin-bottom: 24px;
 }
 
@@ -1626,7 +1626,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .auth-field input {
@@ -1653,7 +1653,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 
 .auth-error {
     font-size: 13px;
-    color: #E8614D;
+    color: #C53019;
 }
 
 .auth-submit {
@@ -1711,7 +1711,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     margin-top: 10px;
     font-family: 'Spline Sans Mono', monospace;
     font-size: 13px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .account-orders-heading {
@@ -1746,7 +1746,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-family: 'Spline Sans Mono', monospace;
     font-size: 12px;
     letter-spacing: 0.06em;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .order-card-status {
@@ -1797,7 +1797,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .no-orders-sub {
     margin: 6px 0 18px;
     font-size: 14px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 /* Logged out state */
@@ -1822,7 +1822,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .logged-out-sub {
     margin: 8px 0 20px;
     font-size: 14px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 
@@ -1866,7 +1866,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .checkout-field-row {
@@ -1924,7 +1924,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
     margin-bottom: 16px;
 }
 
@@ -1960,14 +1960,14 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .checkout-summary-item-qty {
     font-family: 'Spline Sans Mono', monospace;
     font-size: 11.5px;
-    color: #8E8E82;
+    color: #69695F;
     margin-top: 3px;
 }
 
 .checkout-summary-item-price {
     font-size: 14px;
     font-weight: 700;
-    color: #E8614D;
+    color: #C53019;
 }
 
 .checkout-totals {
@@ -2067,7 +2067,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .checkout-empty-sub {
     margin: 8px 0 20px;
     font-size: 14px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 
@@ -2174,7 +2174,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .cart-drawer-item-line {
     font-size: 14px;
     font-weight: 700;
-    color: #E8614D;
+    color: #C53019;
     white-space: nowrap;
 }
 
@@ -2214,7 +2214,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
     background: none;
     border: none;
     padding: 0;
@@ -2222,7 +2222,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 }
 
 .cart-remove-btn:hover {
-    color: #E8614D;
+    color: #C53019;
 }
 
 /* Cart footer */
@@ -2243,7 +2243,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 12px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .cart-drawer-subtotal-value {
@@ -2255,7 +2255,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .cart-drawer-shipping {
     margin: 0 0 16px;
     font-size: 12.5px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 .cart-drawer-checkout {
@@ -2301,7 +2301,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .cart-drawer-empty-sub {
     margin-top: 6px;
     font-size: 14px;
-    color: #8E8E82;
+    color: #69695F;
 }
 
 
@@ -2350,7 +2350,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #8E8E82;
+    color: rgba(254, 253, 245, 0.5);
 }
 
 /* Footer newsletter */
@@ -2482,7 +2482,7 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 .error-page-sub {
     margin: 12px 0 28px;
     font-size: 15px;
-    color: #8E8E82;
+    color: #69695F;
     max-width: 40ch;
     margin-left: auto;
     margin-right: auto;
