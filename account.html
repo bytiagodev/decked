@@ -47,8 +47,8 @@
             html += '<span class="section-label section-label--muted">// Account</span>';
             html += '<div class="account-header">';
             html += '<div>';
-            html += '<h1 class="account-name">Back on the board, ' + firstName + '.</h1>';
-            html += '<div class="account-email">' + user.email + '</div>';
+            html += '<h1 class="account-name">Back on the board, ' + escapeHtml(firstName) + '.</h1>';
+            html += '<div class="account-email">' + escapeHtml(user.email) + '</div>';
             html += '</div>';
             html += '<button type="button" class="btn-outline js-logout">Log out</button>';
             html += '</div>';
@@ -61,12 +61,12 @@
                     var itemCount = o.items.reduce(function (sum, i) { return sum + i.qty; }, 0);
                     html += '<div class="order-card">';
                     html += '<div style="min-width:160px;">';
-                    html += '<div class="order-card-meta">' + o.number + ' &middot; ' + o.date + '</div>';
+                    html += '<div class="order-card-meta">' + escapeHtml(o.number) + ' &middot; ' + escapeHtml(o.date) + '</div>';
                     html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Confirmed &middot; ' + itemCount + ' items</div>';
                     html += '</div>';
                     html += '<div class="order-card-thumbs">';
                     o.items.slice(0, 4).forEach(function (it) {
-                        html += '<img src="' + (it.img || '') + '" alt="' + it.name + '" class="order-card-thumb">';
+                        html += '<img src="' + escapeHtml(it.img || '') + '" alt="' + escapeHtml(it.name) + '" class="order-card-thumb">';
                     });
                     html += '</div>';
                     html += '<div class="order-card-total">\u20AC' + o.total + '</div>';

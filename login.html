@@ -133,7 +133,7 @@
                     saveUser({ name: derivedName || 'Skater', email: email });
                 }
 
-                window.location.href = nextParam ? decodeURIComponent(nextParam) : 'account.html';
+                window.location.href = nextParam === 'checkout.html' ? 'checkout.html' : 'account.html';
             });
         });
     </script>

@@ -102,7 +102,7 @@
                     '<div class="order-confirmed">' +
                         '<div class="order-confirmed-icon">\u2713</div>' +
                         '<h1>Order placed.</h1>' +
-                        '<p>Order ' + order.number + ' is all set for \u20AC' + order.total + '. We sent a receipt to ' + emailDisplay + '. See you on the boardwalk.</p>' +
+                        '<p>Order ' + escapeHtml(order.number) + ' is all set for \u20AC' + order.total + '. We sent a receipt to ' + escapeHtml(emailDisplay) + '. See you on the boardwalk.</p>' +
                         '<div class="order-confirmed-actions">' +
                             '<a href="account.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">View orders</a>' +
                             '<a href="shop.html" class="btn-outline" style="padding:13px 26px;">Keep shopping</a>' +
