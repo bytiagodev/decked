@@ -59,10 +59,14 @@ function initNavbarAuth() {
 
 /* ---------- Cart drawer ---------- */
 
+var cartReturnFocus = null;
+
 function initCartDrawer() {
     var drawer   = document.getElementById('cartDrawer');
     var backdrop = document.getElementById('cartBackdrop');
     if (!drawer) return;
+
+    drawer.inert = true;
 
     var openBtns = document.querySelectorAll('.js-open-cart');
     for (var i = 0; i < openBtns.length; i++) {
@@ -85,12 +89,20 @@ function initCartDrawer() {
         });
     }
 
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+            closeCartDrawer();
+        }
+    });
+
     renderCartDrawer();
 }
 
 function openCartDrawer() {
     var drawer   = document.getElementById('cartDrawer');
     var backdrop = document.getElementById('cartBackdrop');
+    cartReturnFocus = document.activeElement;
+    if (drawer)   drawer.inert = false;
     if (drawer)   drawer.classList.add('is-open');
     if (backdrop) backdrop.style.display = 'block';
     document.body.style.overflow = 'hidden';
@@ -98,14 +110,25 @@ function openCartDrawer() {
 
     var menu = document.getElementById('mobileMenu');
     if (menu) menu.style.display = 'none';
+    var toggleBtn = document.getElementById('menuToggle');
+    if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+
+    var closeBtn = drawer ? drawer.querySelector('.js-close-cart') : null;
+    if (closeBtn) closeBtn.focus();
 }
 
 function closeCartDrawer() {
     var drawer   = document.getElementById('cartDrawer');
     var backdrop = document.getElementById('cartBackdrop');
     if (drawer)   drawer.classList.remove('is-open');
+    if (drawer)   drawer.inert = true;
     if (backdrop) backdrop.style.display = 'none';
     document.body.style.overflow = '';
+
+    if (cartReturnFocus && document.contains(cartReturnFocus)) {
+        cartReturnFocus.focus();
+    }
+    cartReturnFocus = null;
 }
 
 function renderCartDrawer() {
@@ -142,11 +165,11 @@ function renderCartDrawer() {
                     '</div>' +
                     '<div class="cart-drawer-item-controls">' +
                         '<div class="qty-control">' +
-                            '<button type="button" data-qty-dec="' + p.id + '">\u2212</button>' +
+                            '<button type="button" data-qty-dec="' + p.id + '" aria-label="Decrease quantity of ' + escapeHtml(p.name) + '">\u2212</button>' +
                             '<span>' + ci.qty + '</span>' +
-                            '<button type="button" data-qty-inc="' + p.id + '">+</button>' +
+                            '<button type="button" data-qty-inc="' + p.id + '" aria-label="Increase quantity of ' + escapeHtml(p.name) + '">+</button>' +
                         '</div>' +
-                        '<button type="button" class="cart-remove-btn" data-remove="' + p.id + '">Remove</button>' +
+                        '<button type="button" class="cart-remove-btn" data-remove="' + p.id + '" aria-label="Remove ' + escapeHtml(p.name) + ' from cart">Remove</button>' +
                     '</div>' +
                 '</div>' +
             '</div>';
@@ -189,6 +212,7 @@ function initMobileMenu() {
         var isOpen = menu.style.display === 'flex';
         menu.style.display = isOpen ? 'none' : 'flex';
         document.body.style.overflow = isOpen ? '' : 'hidden';
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
     });
 
     var links = menu.querySelectorAll('a, button');
@@ -196,8 +220,18 @@ function initMobileMenu() {
         links[i].addEventListener('click', function () {
             menu.style.display = 'none';
             document.body.style.overflow = '';
+            toggleBtn.setAttribute('aria-expanded', 'false');
         });
     }
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.style.display === 'flex') {
+            menu.style.display = 'none';
+            document.body.style.overflow = '';
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            toggleBtn.focus();
+        }
+    });
 }
 
 

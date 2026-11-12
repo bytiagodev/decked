@@ -19,7 +19,7 @@ var HEADER_HTML =
     '        </div>' +
     '        <div class="navbar-mobile">' +
     '            <button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button>' +
-    '            <button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button>' +
+    '            <button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">&equiv;</button>' +
     '        </div>' +
     '    </nav>' +
     '</header>' +
@@ -62,7 +62,7 @@ var FOOTER_HTML =
 
 var CART_HTML =
     '<div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>' +
-    '<aside class="cart-drawer" id="cartDrawer">' +
+    '<aside class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Your cart">' +
     '    <div class="cart-drawer-header">' +
     '        <span class="cart-drawer-title">Your cart</span>' +
     '        <button type="button" class="cart-drawer-close js-close-cart" aria-label="Close cart">&times;</button>' +

@@ -76,6 +76,9 @@ a {
    NAVBAR
    ============================================ */
 
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #2C2C28; outline-offset: 2px; }
+.site-footer a:focus-visible, .site-footer button:focus-visible, .site-footer input:focus-visible { outline-color: #FEFDF5; }
+
 [data-layout="header"] { display: block; height: 67px; }
 
 .navbar {
@@ -2634,4 +2637,9 @@ main {
         right: -120px;
         opacity: 0.04;
     }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track, .marquee-wheel, .manifesto-wheel, .shop-hero-wheel, .footer-wheel { animation: none; }
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
