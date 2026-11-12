@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!user) {
         container.innerHTML =
             '<div class="logged-out-state">' +
-                '<img src="assets/decked-wheel.png" alt="">' +
+                '<img src="assets/decked-wheel-sm.webp" alt="">' +
                 '<div class="logged-out-title">You’re not signed in.</div>' +
                 '<div class="logged-out-sub">Orders and cart stay for next time.</div>' +
                 '<a href="login.html?next=account.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Log in</a>' +

@@ -30,7 +30,7 @@ Most skate brands go dark and gritty. This one goes to the boardwalk at golden h
 ---
 
 <p align="center">
-  <img src="assets/decked-wheel.png" alt="DECKED" width="40"/>
+  <img src="assets/decked-wheel-sm.webp" alt="DECKED" width="40"/>
   <br/>
   <sub>DECKED &copy; 2026 · Built by <a href="https://bytiago.com/en/">Tiago Teixeira</a></sub>
 </p>

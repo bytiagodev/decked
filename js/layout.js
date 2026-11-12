@@ -4,7 +4,7 @@ var HEADER_HTML =
     '<header class="navbar">' +
     '    <nav class="navbar-inner">' +
     '        <a href="index.html" class="navbar-logo" aria-label="DECKED home">' +
-    '            <img src="assets/decked-wheel.png" alt="">' +
+    '            <img src="assets/decked-wheel-sm.webp" alt="">' +
     '            <span>DECKED</span>' +
     '        </a>' +
     '        <div class="navbar-desktop">' +
@@ -36,7 +36,7 @@ var FOOTER_HTML =
     '<footer class="site-footer">' +
     '    <div class="footer-inner">' +
     '        <div class="footer-brand">' +
-    '            <img src="assets/decked-wheel.png" alt="" class="footer-wheel">' +
+    '            <img src="assets/decked-wheel-sm.webp" alt="" class="footer-wheel">' +
     '            <div>' +
     '                <div class="footer-brand-name">DECKED</div>' +
     '                <div class="footer-brand-location">Venice Beach, CA</div>' +
@@ -77,7 +77,7 @@ var CART_HTML =
     '        <a href="checkout.html" class="cart-drawer-checkout">Checkout</a>' +
     '    </div>' +
     '    <div class="cart-drawer-empty" id="cartDrawerEmpty">' +
-    '        <img src="assets/decked-wheel.png" alt="">' +
+    '        <img src="assets/decked-wheel-sm.webp" alt="">' +
     '        <div>' +
     '            <div class="cart-drawer-empty-title">Your cart\'s empty.</div>' +
     '            <div class="cart-drawer-empty-sub">Go get decked.</div>' +

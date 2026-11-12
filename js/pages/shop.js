@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (cat === 'All') {
             bannerEl.innerHTML =
                 '<div class="shop-hero-banner">' +
-                    '<img src="assets/decked-wheel.png" alt="" class="shop-hero-wheel">' +
+                    '<img src="assets/decked-wheel.webp" alt="" class="shop-hero-wheel">' +
                     '<div class="shop-hero-content">' +
                         '<span class="section-label section-label--teal">// The full range</span>' +
                         '<h2>Everything we make,<br>in one place.</h2>' +

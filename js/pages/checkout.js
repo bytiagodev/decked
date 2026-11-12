@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (cart.length === 0) {
         container.innerHTML =
             '<div class="checkout-empty">' +
-                '<img src="assets/decked-wheel.png" alt="">' +
+                '<img src="assets/decked-wheel-sm.webp" alt="">' +
                 '<div class="checkout-empty-title">Nothing in your cart yet.</div>' +
                 '<div class="checkout-empty-sub">Add a few things before heading out.</div>' +
                 '<a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Start shopping</a>' +
