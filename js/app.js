@@ -257,12 +257,6 @@ function buildProductCard(product) {
 
     var card = document.createElement('div');
     card.className = 'product-card';
-    card.setAttribute('role', 'button');
-    card.setAttribute('tabindex', '0');
-
-    card.addEventListener('click', function () {
-        window.location.href = 'product.html?id=' + product.id;
-    });
 
     var html = '<div class="product-card-img">';
     html += '<img src="' + img + '" alt="' + product.name + '" loading="lazy">';
@@ -284,7 +278,7 @@ function buildProductCard(product) {
     html += '<div class="product-card-info">';
     html += '<span class="product-card-category">' + product.cat + '</span>';
     html += '<div class="product-card-row">';
-    html += '<span class="product-card-name">' + product.name + '</span>';
+    html += '<a class="product-card-name" href="product.html?id=' + product.id + '">' + product.name + '</a>';
     html += '<span class="product-card-price">\u20AC' + product.price + '</span>';
     html += '</div>';
 

@@ -871,6 +871,7 @@ a {
 }
 
 .product-card-add {
+    z-index: 2;
     position: absolute;
     right: 11px;
     bottom: 11px;
@@ -924,6 +925,10 @@ a {
     color: #2C2C28;
     line-height: 1.22;
 }
+a.product-card-name { color: inherit; text-decoration: none; }
+a.product-card-name::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+a.product-card-name:focus-visible { outline: none; }
+a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-offset: -2px; border-radius: 9px; }
 
 .product-card-price {
     font-size: 15px;
