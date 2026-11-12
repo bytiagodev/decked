@@ -435,6 +435,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     box-shadow: 0 14px 28px -12px rgba(78, 205, 196, 0.85);
 }
 
+.btn-primary--sm { font-size: 14px; padding: 13px 26px; }
+.btn-primary--lg { padding: 15px 34px; }
+
 .btn-hero-primary {
     font-size: 15px;
     font-weight: 700;
@@ -485,6 +488,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     border-color: #2C2C28;
     background: rgba(142, 142, 130, 0.1);
 }
+
+.btn-outline--sm { padding: 13px 26px; }
 
 .btn-mono-underline {
     font-family: 'Spline Sans Mono', monospace;
@@ -873,6 +878,11 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     box-shadow: 0 3px 10px -4px rgba(44, 44, 40, 0.5);
 }
 
+.product-card-tag--new { background: #4ECDC4; color: #2C2C28; }
+.product-card-tag--sale { background: #E8614D; color: #FEFDF5; }
+.product-card-tag--other { background: #F5A623; color: #2C2C28; }
+.product-card-tag--detail { top: 16px; left: 16px; font-size: 11px; padding: 6px 11px; border-radius: 6px; }
+
 .product-card-add {
     z-index: 2;
     position: absolute;
@@ -1117,6 +1127,10 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     padding: clamp(26px, 4vw, 48px) clamp(16px, 4vw, 42px) clamp(50px, 7vw, 90px);
 }
 
+.product-missing { text-align: center; padding: 60px 0; }
+.product-missing-title { font-family: 'Instrument Serif', serif; font-size: 26px; color: #2C2C28; }
+.product-missing-sub { margin: 8px 0 20px; font-size: 14px; color: #8E8E82; }
+
 .product-detail-layout {
     display: flex;
     flex-wrap: wrap;
@@ -1193,12 +1207,18 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     letter-spacing: 0.04em;
 }
 
+.product-detail-stock--in { color: #2f9e94; }
+.product-detail-stock--low { color: #b07e0a; }
+.product-detail-stock--out { color: #E8614D; }
+
 .stock-dot {
     width: 7px;
     height: 7px;
     border-radius: 999px;
     display: inline-block;
 }
+
+.product-detail-stock .stock-dot { background: currentColor; }
 
 .product-detail-blurb {
     margin: 20px 0 0;
@@ -1722,6 +1742,8 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
     align-items: center;
     justify-content: space-between;
 }
+
+.order-card-main { min-width: 160px; }
 
 .order-card-meta {
     font-family: 'Spline Sans Mono', monospace;
@@ -2476,6 +2498,8 @@ a.product-card-name:focus-visible::after { outline: 2px solid #2C2C28; outline-o
 main {
     flex: 1 0 auto;
 }
+
+.main--cream { background: #FEFDF5; }
 
 /* ============================================
    REVEAL ANIMATION

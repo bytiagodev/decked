@@ -272,15 +272,10 @@ function productImage(product) {
   return "images/products/" + product.id + ".jpg";
 }
 
-function tagColor(tag) {
-  if (tag === "New") return "#4ECDC4";
-  if (tag === "Sale") return "#E8614D";
-  return "#F5A623";
-}
-
-function tagTextColor(tag) {
-  if (tag === "Sale") return "#FEFDF5";
-  return "#2C2C28";
+function tagClass(tag) {
+  if (tag === "New") return "product-card-tag--new";
+  if (tag === "Sale") return "product-card-tag--sale";
+  return "product-card-tag--other";
 }
 
 function effectiveStock(product) {
@@ -294,9 +289,9 @@ function isOutOfStock(product) {
 
 function stockMeta(product) {
   var st = effectiveStock(product);
-  if (st === "out") return { label: "Sold out", color: "#E8614D" };
-  if (st === "low") return { label: "Only a few left", color: "#b07e0a" };
-  return { label: "In stock", color: "#2f9e94" };
+  if (st === "out") return { label: "Sold out", state: "out" };
+  if (st === "low") return { label: "Only a few left", state: "low" };
+  return { label: "In stock", state: "in" };
 }
 
 /* ---------- Per-product specs ---------- */

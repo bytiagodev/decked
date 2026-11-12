@@ -300,7 +300,7 @@ function buildProductCard(product) {
     }
 
     if (product.tag) {
-        html += '<span class="product-card-tag" style="color:' + tagTextColor(product.tag) + ';background:' + tagColor(product.tag) + ';">' + product.tag + '</span>';
+        html += '<span class="product-card-tag ' + tagClass(product.tag) + '">' + product.tag + '</span>';
     }
 
     if (!out) {

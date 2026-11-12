@@ -82,7 +82,7 @@ var CART_HTML =
     '            <div class="cart-drawer-empty-title">Your cart\'s empty.</div>' +
     '            <div class="cart-drawer-empty-sub">Go get decked.</div>' +
     '        </div>' +
-    '        <a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a>' +
+    '        <a href="shop.html" class="btn-primary btn-primary--sm">Start shopping</a>' +
     '    </div>' +
     '</aside>';
 

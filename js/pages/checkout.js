@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 '<img src="assets/decked-wheel-sm.webp" alt="">' +
                 '<div class="checkout-empty-title">Nothing in your cart yet.</div>' +
                 '<div class="checkout-empty-sub">Add a few things before heading out.</div>' +
-                '<a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Start shopping</a>' +
+                '<a href="shop.html" class="btn-primary btn-primary--sm">Start shopping</a>' +
             '</div>';
         return;
     }
@@ -77,8 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 '<h1>Order placed.</h1>' +
                 '<p>Order ' + escapeHtml(order.number) + ' is all set for \u20AC' + order.total + '. We sent a receipt to ' + escapeHtml(emailDisplay) + '. See you on the boardwalk.</p>' +
                 '<div class="order-confirmed-actions">' +
-                    '<a href="account.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">View orders</a>' +
-                    '<a href="shop.html" class="btn-outline" style="padding:13px 26px;">Keep shopping</a>' +
+                    '<a href="account.html" class="btn-primary btn-primary--sm">View orders</a>' +
+                    '<a href="shop.html" class="btn-outline btn-outline--sm">Keep shopping</a>' +
                 '</div>' +
             '</div>';
 

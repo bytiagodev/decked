@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 '<img src="assets/decked-wheel-sm.webp" alt="">' +
                 '<div class="logged-out-title">You’re not signed in.</div>' +
                 '<div class="logged-out-sub">Orders and cart stay for next time.</div>' +
-                '<a href="login.html?next=account.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Log in</a>' +
+                '<a href="login.html?next=account.html" class="btn-primary btn-primary--sm">Log in</a>' +
             '</div>';
         return;
     }
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         orders.forEach(function (o) {
             var itemCount = o.items.reduce(function (sum, i) { return sum + i.qty; }, 0);
             html += '<div class="order-card">';
-            html += '<div style="min-width:160px;">';
+            html += '<div class="order-card-main">';
             html += '<div class="order-card-meta">' + escapeHtml(o.number) + ' &middot; ' + escapeHtml(o.date) + '</div>';
             html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Confirmed &middot; ' + itemCount + ' items</div>';
             html += '</div>';
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<div class="no-orders">';
         html += '<div class="no-orders-title">No orders yet.</div>';
         html += '<div class="no-orders-sub">Your rides will show up here once you check out.</div>';
-        html += '<a href="shop.html" class="btn-primary" style="font-size:14px;padding:12px 26px;">Start shopping</a>';
+        html += '<a href="shop.html" class="btn-primary btn-primary--sm">Start shopping</a>';
         html += '</div>';
     }
 

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var container = document.getElementById('productDetail');
 
     if (!product) {
-        container.innerHTML = '<a href="shop.html" class="btn-back">Back to the shop</a><div style="text-align:center;padding:60px 0;"><div style="font-family:\'Instrument Serif\',serif;font-size:26px;color:#2C2C28;">This one rolled away.</div><div style="margin:8px 0 20px;font-size:14px;color:#8E8E82;">We couldn\'t find that product.</div><a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 28px;">Back to the shop</a></div>';
+        container.innerHTML = '<a href="shop.html" class="btn-back">Back to the shop</a><div class="product-missing"><div class="product-missing-title">This one rolled away.</div><div class="product-missing-sub">We couldn\'t find that product.</div><a href="shop.html" class="btn-primary btn-primary--sm">Back to the shop</a></div>';
         return;
     }
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     html += '<div class="product-detail-image">';
     html += '<img src="' + productImage(product) + '" alt="' + product.name + '">';
     if (product.tag) {
-        html += '<span class="product-card-tag" style="color:' + tagTextColor(product.tag) + ';background:' + tagColor(product.tag) + ';top:16px;left:16px;font-size:11px;padding:6px 11px;border-radius:6px;">' + product.tag + '</span>';
+        html += '<span class="product-card-tag product-card-tag--detail ' + tagClass(product.tag) + '">' + product.tag + '</span>';
     }
     html += '</div>';
 
@@ -31,13 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
     html += '<h1 class="product-detail-name">' + product.name + '</h1>';
     html += '<div class="product-detail-price-row">';
     html += '<div class="product-detail-price">\u20AC' + product.price + '</div>';
-    html += '<span class="product-detail-stock" style="color:' + meta.color + ';"><span class="stock-dot" style="background:' + meta.color + ';"></span>' + meta.label + '</span>';
+    html += '<span class="product-detail-stock product-detail-stock--' + meta.state + '"><span class="stock-dot"></span>' + meta.label + '</span>';
     html += '</div>';
     html += '<p class="product-detail-blurb">' + blurb + '</p>';
 
     html += '<div class="product-detail-actions">';
     if (!out) {
-        html += '<button type="button" class="btn-primary btn-primary--shadow" id="addToCartBtn" style="padding:15px 34px;">Add to cart</button>';
+        html += '<button type="button" class="btn-primary btn-primary--shadow btn-primary--lg" id="addToCartBtn">Add to cart</button>';
     } else {
         html += '<span class="product-detail-soldout">Sold out</span>';
     }
