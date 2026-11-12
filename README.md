@@ -25,7 +25,9 @@ None of it is secure, and it was never meant to be. What it taught me was keepin
 
 ## Golden hour, not grit
 
-Most skate brands go dark and gritty. This one goes to the boardwalk at golden hour: cream ground, coral on the prices, seafoam on every primary button, sunset orange on the low-stock dots. Prices, category tags and stock labels are set in a monospace face, so the numbers always read as data.
+Most skate brands go dark and gritty. This one goes to the boardwalk at golden hour: cream ground, deep coral on the prices, seafoam on every primary button, sunset orange on the low-stock dots. Category names, tags and stock labels are set in a monospace face, so the small print reads as data.
+
+The product and lifestyle images were generated with AI.
 
 ---
 
