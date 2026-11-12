@@ -1,0 +1,102 @@
+/* ---------- Shared layout ---------- */
+
+var HEADER_HTML =
+    '<header class="navbar">' +
+    '    <nav class="navbar-inner">' +
+    '        <a href="index.html" class="navbar-logo" aria-label="DECKED home">' +
+    '            <img src="assets/decked-wheel.png" alt="">' +
+    '            <span>DECKED</span>' +
+    '        </a>' +
+    '        <div class="navbar-desktop">' +
+    '            <a href="shop.html" class="navbar-link">Shop</a>' +
+    '            <a href="about.html" class="navbar-link">About</a>' +
+    '            <a href="login.html" class="navbar-link js-guest-only">Log in</a>' +
+    '            <a href="account.html" class="navbar-link navbar-user-link js-auth-only" style="display:none;">' +
+    '                <span class="navbar-user-dot"></span>' +
+    '                <span class="js-user-name">Account</span>' +
+    '            </a>' +
+    '            <button type="button" class="navbar-cart js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button>' +
+    '        </div>' +
+    '        <div class="navbar-mobile">' +
+    '            <button type="button" class="navbar-cart--mobile js-open-cart">Cart <span class="navbar-cart-count js-cart-count">0</span></button>' +
+    '            <button type="button" class="navbar-hamburger" id="menuToggle" aria-label="Menu">&equiv;</button>' +
+    '        </div>' +
+    '    </nav>' +
+    '</header>' +
+    '<div class="mobile-menu" id="mobileMenu" style="display:none;">' +
+    '    <a href="shop.html" class="mobile-menu-link">Shop</a>' +
+    '    <a href="about.html" class="mobile-menu-link">About</a>' +
+    '    <a href="login.html" class="mobile-menu-link js-guest-only">Log in</a>' +
+    '    <a href="account.html" class="mobile-menu-link js-auth-only" style="display:none;">Account</a>' +
+    '    <button type="button" class="mobile-menu-link mobile-menu-link--muted js-logout js-auth-only" style="display:none;">Log out</button>' +
+    '    <div class="mobile-menu-footer">Venice Beach, CA &middot; Ride. Style. Repeat.</div>' +
+    '</div>';
+
+var FOOTER_HTML =
+    '<footer class="site-footer">' +
+    '    <div class="footer-inner">' +
+    '        <div class="footer-brand">' +
+    '            <img src="assets/decked-wheel.png" alt="" class="footer-wheel">' +
+    '            <div>' +
+    '                <div class="footer-brand-name">DECKED</div>' +
+    '                <div class="footer-brand-location">Venice Beach, CA</div>' +
+    '            </div>' +
+    '        </div>' +
+    '        <div class="footer-newsletter">' +
+    '            <div class="footer-newsletter-heading">Get the drop before it sells out.</div>' +
+    '            <form class="footer-newsletter-form" id="newsletterForm">' +
+    '                <input type="email" required placeholder="you@email.com" class="footer-newsletter-input">' +
+    '                <button type="submit" class="footer-newsletter-btn">Sign me up</button>' +
+    '            </form>' +
+    '            <div class="footer-newsletter-done" id="newsletterDone" style="display:none;">You\'re on the list. See you on the boardwalk.</div>' +
+    '        </div>' +
+    '    </div>' +
+    '    <div class="footer-bottom">' +
+    '        <span>&copy; 2026 DECKED. Made on the boardwalk.</span>' +
+    '        <div class="footer-bottom-links">' +
+    '            <a href="about.html" class="footer-bottom-link">About</a>' +
+    '            <span>Ride &middot; Style &middot; Repeat</span>' +
+    '        </div>' +
+    '    </div>' +
+    '</footer>';
+
+var CART_HTML =
+    '<div class="cart-backdrop" id="cartBackdrop" style="display:none;"></div>' +
+    '<aside class="cart-drawer" id="cartDrawer">' +
+    '    <div class="cart-drawer-header">' +
+    '        <span class="cart-drawer-title">Your cart</span>' +
+    '        <button type="button" class="cart-drawer-close js-close-cart" aria-label="Close cart">&times;</button>' +
+    '    </div>' +
+    '    <div class="cart-drawer-items" id="cartDrawerItems"></div>' +
+    '    <div class="cart-drawer-footer" id="cartDrawerFooter" style="display:none;">' +
+    '        <div class="cart-drawer-subtotal">' +
+    '            <span class="cart-drawer-subtotal-label">Subtotal</span>' +
+    '            <span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span>' +
+    '        </div>' +
+    '        <p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p>' +
+    '        <a href="checkout.html" class="cart-drawer-checkout">Checkout</a>' +
+    '    </div>' +
+    '    <div class="cart-drawer-empty" id="cartDrawerEmpty">' +
+    '        <img src="assets/decked-wheel.png" alt="">' +
+    '        <div>' +
+    '            <div class="cart-drawer-empty-title">Your cart\'s empty.</div>' +
+    '            <div class="cart-drawer-empty-sub">Go get decked.</div>' +
+    '        </div>' +
+    '        <a href="shop.html" class="btn-primary" style="font-size:14px;padding:13px 26px;">Start shopping</a>' +
+    '    </div>' +
+    '</aside>';
+
+
+/* ---------- Mount ---------- */
+
+function mountLayout() {
+    var parts = { header: HEADER_HTML, footer: FOOTER_HTML, cart: CART_HTML };
+    for (var key in parts) {
+        var placeholder = document.querySelector('[data-layout="' + key + '"]');
+        if (placeholder) {
+            placeholder.outerHTML = parts[key];
+        }
+    }
+}
+
+mountLayout();
