@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             html += '<div class="order-card">';
             html += '<div class="order-card-main">';
             html += '<div class="order-card-meta">' + escapeHtml(o.number) + ' &middot; ' + escapeHtml(o.date) + '</div>';
-            html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Confirmed &middot; ' + itemCount + ' items</div>';
+            html += '<div class="order-card-status"><span class="navbar-user-dot"></span>Confirmed &middot; ' + itemCount + (itemCount === 1 ? ' item' : ' items') + '</div>';
             html += '</div>';
             html += '<div class="order-card-thumbs">';
             o.items.slice(0, 4).forEach(function (it) {

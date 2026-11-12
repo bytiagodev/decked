@@ -73,7 +73,7 @@ var CART_HTML =
     '            <span class="cart-drawer-subtotal-label">Subtotal</span>' +
     '            <span class="cart-drawer-subtotal-value" id="cartSubtotalValue">&euro;0</span>' +
     '        </div>' +
-    '        <p class="cart-drawer-shipping">Shipping and taxes calculated at checkout.</p>' +
+    '        <p class="cart-drawer-shipping">Shipping calculated at checkout.</p>' +
     '        <a href="checkout.html" class="cart-drawer-checkout">Checkout</a>' +
     '    </div>' +
     '    <div class="cart-drawer-empty" id="cartDrawerEmpty">' +

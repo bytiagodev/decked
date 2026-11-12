@@ -89,7 +89,9 @@ function saveUser(user) {
 }
 
 function clearUser() {
-    localStorage.removeItem('decked_user');
+    try {
+        localStorage.removeItem('decked_user');
+    } catch (e) {}
 }
 
 function isLoggedIn() {
@@ -98,6 +100,8 @@ function isLoggedIn() {
 
 
 /* ---------- Orders ---------- */
+
+function shippingFor(subtotal) { return subtotal >= 75 ? 0 : 5; }
 
 function getOrders() {
     try {
@@ -120,7 +124,7 @@ function placeOrder() {
     if (cart.length === 0) return null;
 
     var subtotal = cartSubtotal();
-    var shipping = subtotal >= 75 ? 0 : 5;
+    var shipping = shippingFor(subtotal);
     var total = subtotal + shipping;
 
     var items = cart.map(function (ci) {

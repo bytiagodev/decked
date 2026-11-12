@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var subtotal = cartSubtotal();
-    var shipping = subtotal >= 75 ? 0 : 5;
+    var shipping = shippingFor(subtotal);
     var total = subtotal + shipping;
 
     var html = '';

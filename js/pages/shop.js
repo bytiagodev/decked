@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var params = new URLSearchParams(window.location.search);
     var currentCat = params.get('cat') || 'All';
+    if (CATEGORIES.indexOf(currentCat) === -1) currentCat = 'All';
 
     renderShop(currentCat);
 
